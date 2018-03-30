@@ -18,4 +18,8 @@ export class BlogService {
     this.blogs.push(newBlogPost);
   }
 
+  getBlogById(blogId: string){
+    return this.database.object('blog/' + blogId);
+  }
+
 }

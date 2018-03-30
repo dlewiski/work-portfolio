@@ -5,6 +5,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { PersonalBlogComponent } from './personal-blog/personal-blog.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AdminComponent } from './admin/admin.component';
+import { BlogDetailsComponent } from './blog-details/blog-details.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
+  },
+  {
+    path: 'blog/:id',
+    component: BlogDetailsComponent
   }
 ];
 

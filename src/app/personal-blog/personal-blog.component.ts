@@ -20,4 +20,7 @@ export class PersonalBlogComponent implements OnInit {
     this.blogs = this.BlogService.getBlogPosts();
   }
 
+  goToBlogPostDetail(clickedBlog) {
+    this.router.navigate(['blogs', clickedBlog.$key]);
+  };
 }
