@@ -16,8 +16,8 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitBlog(title: string, postBody: string, date: string){
-    let newBlogPost: Blog = new Blog(title, postBody, date);
+  submitBlog(title: string, postBody: string){
+    let newBlogPost: Blog = new Blog(title, postBody);
     this.BlogService.addBlogPost(newBlogPost);
   }
 

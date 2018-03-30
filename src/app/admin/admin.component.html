@@ -8,15 +8,9 @@
   </div>
 
   <div>
-    <label>Date:</label>
-    <br>
-    <input #newDate type="date" id="exampleInput" name="input" placeholder="yyyy-MM-dd" min="2018-01-01" required />
-  </div>
-
-  <div>
     <label>Blog Body:</label>
     <br>
     <textarea #newPostBody id="blogTextArea"></textarea>
   </div>
-  <button (click)="submitBlog(newTitle.value, newDate.value, newPostBody.value); newTitle.value=''; newDate.value=''; newPostBody.value=''">Add</button>
+  <button (click)="submitBlog(newTitle.value, newPostBody.value); newTitle.value=''; newPostBody.value=''">Post to Blog</button>
 </div>
