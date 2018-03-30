@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog.service';
 import { Blog } from '../models/blog.model';
-// import { Project } from '../models/project.model';
+import { Project } from '../models/project.model';
 // import { ProjectService } from '../project.service';
 
 @Component({
@@ -24,8 +24,8 @@ export class AdminComponent implements OnInit {
   }
 
   submitProject(projectTitle: string, description: string, challenges: string, projectUrl: string){
-    // let newProject: Project = new Project(projectTitle, description, challenges, projectUrl);
-    // this.ProjectService.addNewProject(newProject);
+    let newProject: Project = new Project(projectTitle, description, challenges, projectUrl);
+    this.BlogService.addNewProject(newProject);
   }
 
 }
