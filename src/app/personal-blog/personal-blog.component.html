@@ -1,3 +1,5 @@
-<p>
-  personal-blog works!
-</p>
+<div *ngFor="let blog of blogs | async" class="card card-default">
+  <div class="card-heading">
+   <p class="card-title"> {{blog.title}} </p>
+ </div>
+</div>
