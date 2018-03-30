@@ -14,4 +14,8 @@ export class BlogService {
      return this.blogs;
    }
 
+  addBlogPost(newBlogPost: Blog){
+    this.blogs.push(newBlogPost);
+  }
+
 }
