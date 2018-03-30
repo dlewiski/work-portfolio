@@ -6,11 +6,38 @@
     <br>
     <input #newTitle >
   </div>
-
   <div>
     <label>Blog Body:</label>
     <br>
     <textarea #newPostBody id="blogTextArea"></textarea>
   </div>
   <button (click)="submitBlog(newTitle.value, newPostBody.value); newTitle.value=''; newPostBody.value=''">Post to Blog</button>
+</div>
+
+<hr>
+
+<h3>New Project Post</h3>
+<p>Use this form to create new project for your portfolio.</p>
+<div>
+  <div>
+    <label>Project Title:</label>
+    <br>
+    <input #newProjectTitle >
+  </div>
+  <div>
+    <label>Project Description:</label>
+    <br>
+    <textarea #newProjectDescription id="projectTextArea"></textarea>
+  </div>
+  <div>
+    <label>Project Challenges:</label>
+    <br>
+    <textarea #newProjectChallenges id="projectTextArea"></textarea>
+  </div>
+  <div>
+    <label>Project URL:</label>
+    <br>
+    <input #newProjectURL>
+  </div>
+  <button (click)="submitProject(newProjectTitle.value, newProjectDescription.value, newProjectChallenges, newProjectURL); newProjectTitle.value=''; newProjectDescription.value=''; newProjectChallenges.value=''; newProjectURL=''">Post Project</button>
 </div>
