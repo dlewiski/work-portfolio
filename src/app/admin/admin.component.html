@@ -4,7 +4,7 @@
   <div>
     <label>Blog Title:</label>
     <br>
-    <input #newTitle >
+    <input #newTitle>
   </div>
   <div>
     <label>Blog Body:</label>
@@ -22,7 +22,7 @@
   <div>
     <label>Project Title:</label>
     <br>
-    <input #newProjectTitle >
+    <input #newProjectTitle>
   </div>
   <div>
     <label>Project Description:</label>
@@ -32,12 +32,13 @@
   <div>
     <label>Project Challenges:</label>
     <br>
-    <textarea #newProjectChallenges id="projectTextArea"></textarea>
+    <textarea #newProjectChallenges id="projectChallengeArea"></textarea>
   </div>
   <div>
     <label>Project URL:</label>
     <br>
-    <input #newProjectURL>
+    <input #newProjectUrl>
+    <br>
   </div>
-  <button (click)="submitProject(newProjectTitle.value, newProjectDescription.value, newProjectChallenges, newProjectURL); newProjectTitle.value=''; newProjectDescription.value=''; newProjectChallenges.value=''; newProjectURL=''">Post Project</button>
+  <button (click)="submitProject(newProjectTitle.value, newProjectDescription.value, newProjectChallenges.value, newProjectUrl.value); newProjectTitle.value=''; newProjectDescription.value=''; newProjectChallenges.value=''; newProjectUrl.value=''">Post Project</button>
 </div>

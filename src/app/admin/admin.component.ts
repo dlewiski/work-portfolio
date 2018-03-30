@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog.service';
 import { Blog } from '../models/blog.model';
-import { Project } from '../models/project.model';
-import { ProjectService } from '../project.service';
+// import { Project } from '../models/project.model';
+// import { ProjectService } from '../project.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
-  providers: [BlogService, ProjectService]
+  providers: [BlogService]
 })
 
 export class AdminComponent implements OnInit {
 
-  constructor(private BlogService: BlogService, private ProjectService: ProjectService) { }
+  constructor(private BlogService: BlogService) { }
 
   ngOnInit() {
   }
@@ -23,9 +23,9 @@ export class AdminComponent implements OnInit {
     this.BlogService.addBlogPost(newBlogPost);
   }
 
-  submitProject(title: string, description: string, challenges: string, projectURL: string){
-    let newProject: Project = new Project(title, description, challenges, projectURL);
-    this.ProjectService.addNewProject(newProject);
+  submitProject(projectTitle: string, description: string, challenges: string, projectUrl: string){
+    // let newProject: Project = new Project(projectTitle, description, challenges, projectUrl);
+    // this.ProjectService.addNewProject(newProject);
   }
 
 }
