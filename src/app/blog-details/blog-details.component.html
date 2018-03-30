@@ -1,3 +1,6 @@
-<p>
-  blog-details works!
-</p>
+<div>
+  <h3>{{(blogToDisplay | async)?.title}}</h3>
+  <h4>{{(blogToDisplay | async).date}}</h4>
+  <p>{{(blogToDisplay | async)?.postBody}}</p>
+  <p>{{(blogToDisplay | async).author}}</p>
+</div>

@@ -19,7 +19,7 @@ export class BlogService {
   }
 
   getBlogById(blogId: string){
-    return this.database.object('blog/' + blogId);
+    return this.database.object('blogs/' + blogId);
   }
 
 }

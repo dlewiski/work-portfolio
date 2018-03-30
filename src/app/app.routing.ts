@@ -29,7 +29,7 @@ const appRoutes: Routes = [
     component: AdminComponent
   },
   {
-    path: 'blog/:id',
+    path: 'blogs/:id',
     component: BlogDetailsComponent
   }
 ];
