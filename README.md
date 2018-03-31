@@ -1,27 +1,64 @@
-# WorkPortfolio
+# Personal Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+#### Personal portfolio website that allows me to add projects and blog posts. 03/30/2018
 
-## Development server
+#### By **Anna Marie Cooper**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+This web application will be used to showcase projects I have take part in, and feature a blog that documents the projects (coding and otherwise) that are interesting to me.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Behavior
+1. Allows user(me) to post projects to my portfolio page from the admin page.
+2. Allows user(me) to create blog posts - allowing me to share more about my interests.
+3. Displays a list of blog posts on the blog page.
 
-## Build
+#### Future Behavior
+4. Displays a list of blog posts that can be filtered by topic.
+5. I would like to add authentication so only I can upload projects and blog posts.
+6. I would like to add the ability to upload photos to show off in my blog post and projects.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Setup/Installation Requirements
 
-## Running unit tests
+* Open terminal
+* Move to desired folder
+* Type  _`$ git clone https://github.com/rogueminx/work-portfolio.git`_
+* Type _`$ cd work-portfolio`_ to move to directory.
+* You will need to have your OWN firebase key to use this as your own. Go to 'https://console.firebase.google.com/u/0/' and create an account if necessary.
+* Click on the big '+' to add a project, and give that project a name.
+* Once project is created, click the large </> button to "add Firebase to a web app" A popup will come up with the following information:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    _apiKey: "xxxxxxxxx",
+    authDomain: "xxxxxxxxx",
+    databaseURL: "xxxxxxx",
+    projectId: "xxxxxxxxx",
+    storageBucket: "xxxxxxxxx",
+    messagingSenderId: "xxxxxxxxx"_
 
-## Running end-to-end tests
+* Type  _`$ touch src/app/api-keys.ts`_ for storing your own API Key
+* Open the .api-key file and type  _`export var masterFirebaseConfig = {}`_ then type your own API key info from Firebase within the curly brackets at the end. Save and close.
+* Move back to terminal, set up appropriate nodes by typing: _`$ npm install`_
+* Type _`$ ng build`_
+* To view the website, type : _`$ ng start`_ and navigate to `http://localhost:4200/`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Known Bugs
 
-## Further help
+Adding a project does not yet work.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Support and contact details
+
+Please contact me through github with questions.
+
+## Technologies Used
+
+* HTML
+* CSS
+* Javascript
+* Webpack
+* Angular
+* Typescript
+* Firebase
+
+### License
+
+Copyright (c) 2018  **Anna Marie Cooper**
