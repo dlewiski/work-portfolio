@@ -19,6 +19,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthGuardService } from './services/auth-guard.service'
 import { AuthenticationService } from './services/authentication.service';
+import { LoginComponent } from './login/login.component';
 
 
 export const firebaseConfig = {
@@ -37,7 +38,8 @@ export const firebaseConfig = {
     PersonalBlogComponent,
     AdminComponent,
     BlogDetailsComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

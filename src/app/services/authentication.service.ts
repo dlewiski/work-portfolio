@@ -19,6 +19,11 @@ export class AuthenticationService {
     )
   }
 
+  signInRegular(email, password) {
+    const credential = firebase.auth.EmailAuthProvider.credential( email, password );
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+    }
+
   logout(){
     this.afAuth.auth.signOut();
     this.router.navigate(['']);

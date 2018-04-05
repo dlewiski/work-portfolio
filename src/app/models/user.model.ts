@@ -1,7 +1,7 @@
 export class User {
+  public admin: boolean = false;
   constructor(
-    public name: string,
-    public username: string,
-    public email: string
+    public userName: string,
+    public userEmail: string,
 ) {}
 }
