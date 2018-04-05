@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../blog.service';
+import { BlogService } from '../services/blog.service';
 import { Blog } from '../models/blog.model';
 import { Project } from '../models/project.model';
-// import { ProjectService } from '../project.service';
+import { ProjectService } from '../services/project.service';
 
 @Component({
   selector: 'app-admin',

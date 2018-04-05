@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Blog } from '../models/blog.model';
-import { BlogService } from '../blog.service';
+import { BlogService } from '../services/blog.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({

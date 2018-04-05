@@ -13,6 +13,9 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PersonalBlogComponent } from './personal-blog/personal-blog.component';
 import { AdminComponent } from './admin/admin.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
+import { BlogService } from './services/blog.service';
+import { ProjectService } from './services/project.service';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
