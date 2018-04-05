@@ -13,6 +13,6 @@ export class UserService {
   }
 
   createNewUser(newUser: User){
-    this.user.push(newUser);
+    this.users.push(newUser);
   }
 }

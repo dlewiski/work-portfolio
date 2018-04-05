@@ -1,16 +1,19 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" routerLink="">Anna Marie Cooper</a>
-    </div>
+    <a class="navbar-brand" routerLink="">Anna Marie Cooper</a>
     <ul class="nav navbar-nav navbar-right">
       <li><a routerLink="about-me">About Me</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
       <li><a routerLink="portfolio">Project Portfolio</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
       <li><a routerLink="blog">Personal Blog</a></li>
+      <li *ngIf="isLoggedIn">
+        <a>{{userName}}</a>
+      </li>
+      <li *ngIf="isLoggedIn">
+        <a (click)="logout()">Log Out</a>
+      </li>
+      <li *ngIf="!isLoggedIn">
+        <a (click)="login()">Log In</a>
+      </li>
     </ul>
   </div>
 </nav>

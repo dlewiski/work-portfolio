@@ -37,8 +37,7 @@ export const firebaseConfig = {
     PersonalBlogComponent,
     AdminComponent,
     BlogDetailsComponent,
-    ProjectDetailsComponent,
-    UserComponent
+    ProjectDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +48,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthGuardService, Authentication ],
+  providers: [AuthGuardService, AuthenticationService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
