@@ -13,13 +13,7 @@ export class AuthenticationService {
     this.user = afAuth.authState;
   }
 
-  signInWithGoogle() {
-    return this.afAuth.auth.signInWithPopup(
-      new firebase.auth.GoogleAuthProvider()
-    )
-  }
-
-  signInRegular(email, password) {
+  signInWithEmail(email, password) {
     const credential = firebase.auth.EmailAuthProvider.credential( email, password );
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
     }

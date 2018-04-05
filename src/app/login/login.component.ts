@@ -3,6 +3,9 @@ import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
+import { FirebaseListObservable } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-login',
@@ -10,31 +13,48 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./login.component.css'],
   providers: [ AuthenticationService, UserService ]
 })
+
 export class LoginComponent implements OnInit {
-  user;
+  user: Observable<firebase.User>;
+  authenticatedUserName: string;
 
-  constructor(private AuthenticationService: AuthenticationService,
+  constructor(public afAuth: AngularFireAuth,
               private router: Router,
-              private UserService: UserService
-              ) { }
+              private UserService: UserService,
+              private AuthenticationService: AuthenticationService
+              ) {
+              this.user = afAuth.authState;
+              }
 
-  signInWithEmail(userEmail: string, userPassword: string) {
-  //  this.AuthenticationService.signInRegular(userName, userEmail)
-  //     .then((res) => {
-  //        console.log(res);
-   //
-  //        this.router.navigate(['dashboard']);
-  //     })
-  //     .catch((err) => console.log('error: ' + err));
+  signInWithEmail(userName: string, userEmail: string) {
+    this.AuthenticationService.signInWithEmail(userName, userEmail);
+    this.router.navigate(['']);
   }
 
-  createAccount(userName: string, userEmail: string) {
-    console.log(userName, userEmail)
-    let newUser: User = new User(userName, userEmail);
-    this.UserService.createNewUser(newUser);
-  }
+  // createAccount(userName: string, userEmail: string) {
+  //   let newUser: User = new User(userName, userEmail);
+  //   this.UserService.createNewUser(newUser);
+  // }
 
   ngOnInit() {
   }
+
+  login() {
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    .then(signedInUser => {
+       if (signedInUser) {
+         let uid = firebase.auth().currentUser.uid;
+         this.authenticatedUserName = uid;
+         this.UserService.userExists(uid).subscribe(user => {
+           if (!user) {
+             const newUser = new User(
+               signedInUser.user.displayName, signedInUser.user.uid, signedInUser.user.email
+             );
+             this.UserService.createNewUser(newUser);
+           }
+         });
+       }
+     });
+   }
 
 }

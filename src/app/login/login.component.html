@@ -17,14 +17,14 @@
 <div class="login">
   <div class="form-group">
     <label>User Name</label>
-    <input #userName class="form-control" placeholder="User Name" required>
+    <input #userScreenName class="form-control" placeholder="User Name" required>
   </div>
   <div class="form-group">
-    <label>Password</label>
-    <input #userPassword class="form-control" placeholder="Password" required>
+    <label>User E-mail</label>
+    <input #userEmail class="form-control" placeholder="E-mail" required>
   </div>
   <div class="form-group">
-    <button type="button" class="btn btn-primary btn-block" style="margin-bottom: 20px" (click)="signInWithEmail(userEmail.value, userPassword.value); userEmail.value=''; userPassword.value=''">
+    <button type="button" class="btn btn-primary btn-block" style="margin-bottom: 20px" (click)="login(userScreenName.value, userEmail.value); userEmail.value=''; userScreenName.value=''">
       Login With E-mail
     </button>
   </div>

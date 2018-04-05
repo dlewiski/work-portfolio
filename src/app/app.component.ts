@@ -1,38 +1,42 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from './services/authentication.service';
+import { UserService } from './services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [AuthenticationService]
+  providers: [AuthenticationService, UserService]
 })
-
 export class AppComponent {
-private user;
-private isLoggedIn: Boolean;
-private userName: String;
-title = 'Hi Anna-Marie';
+  title = 'pdxflit';
+  private isLoggedIn: boolean;
+  private userName: string;
+  private userUID: string;
 
-constructor(public AuthenticationService: AuthenticationService, private router: Router) {
-  this.AuthenticationService.user.subscribe(user => {
-    if (user === null) {
-      this.isLoggedIn = false;
-    } else {
-      this.isLoggedIn = true;
-      this.userName = user.displayName;
-    }
-  });
-}
+  user;
+  databaseUser;
 
-login() {
-  this.AuthenticationService.signInWithGoogle();
-}
+  constructor(private router: Router, public authService: AuthenticationService, public userService: UserService) {
+    this.authService.user.subscribe(user => {
+      if (user == null) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = true;
+        this.userName = user.displayName;
+        this.userUID = user.uid;
+      }
+    });
+  }
 
-logout() {
-  this.AuthenticationService.logout();
-}
+  login() {
+    this.AuthenticationService.login();
+  }
+
+  logout() {
+    this.AuthenticationService.logout();
+  }
 
 
 }
