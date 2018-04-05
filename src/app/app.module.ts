@@ -15,6 +15,7 @@ import { AdminComponent } from './admin/admin.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { BlogService } from './services/blog.service';
 import { ProjectService } from './services/project.service';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 
 export const firebaseConfig = {
@@ -32,7 +33,8 @@ export const firebaseConfig = {
     PortfolioComponent,
     PersonalBlogComponent,
     AdminComponent,
-    BlogDetailsComponent
+    BlogDetailsComponent,
+    ProjectDetailsComponent
   ],
   imports: [
     BrowserModule,

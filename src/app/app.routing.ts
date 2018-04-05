@@ -6,6 +6,8 @@ import { PersonalBlogComponent } from './personal-blog/personal-blog.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AdminComponent } from './admin/admin.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
+
 
 const appRoutes: Routes = [
   {
@@ -31,6 +33,10 @@ const appRoutes: Routes = [
   {
     path: 'blogs/:id',
     component: BlogDetailsComponent
+  },
+  {
+    path: 'projects/:id',
+    component: ProjectDetailsComponent
   }
 ];
 
