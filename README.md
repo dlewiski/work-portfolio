@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-#### Personal portfolio website that allows me to add projects and blog posts. 03/30/2018
+#### Personal portfolio website that allows me to add projects and blog posts. 04/06/2018
 
 #### By **Anna Marie Cooper**
 
@@ -12,11 +12,14 @@ This web application will be used to showcase projects I have take part in, and 
 1. Allows user(me) to post projects to my portfolio page from the admin page.
 2. Allows user(me) to create blog posts - allowing me to share more about my interests.
 3. Displays a list of blog posts on the blog page.
+4. Displays a list of projects on the project page.
+5. Allows users to login and logout, their info is saved to firebase.
 
 #### Future Behavior
-4. Displays a list of blog posts that can be filtered by topic.
-5. I would like to add authentication so only I can upload projects and blog posts.
-6. I would like to add the ability to upload photos to show off in my blog post and projects.
+6. Displays a list of blog posts that can be filtered by topic.
+7. I would like to add admin authentication so only I can upload projects and blog posts.
+8. I would like to add the ability to upload photos to show off in my blog post and projects.
+9. I would like to allow the ability to leave comments on blog posts. 
 
 ## Setup/Installation Requirements
 
@@ -43,7 +46,7 @@ This web application will be used to showcase projects I have take part in, and 
 
 ## Known Bugs
 
-Adding a project does not yet work.
+None
 
 ## Support and contact details
 
