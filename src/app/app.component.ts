@@ -14,7 +14,7 @@ export class AppComponent {
   private isLoggedIn: boolean;
   private userName: string;
   private userUID: string;
-  private isAdmin: boolean;
+
 
   user;
   databaseUser;

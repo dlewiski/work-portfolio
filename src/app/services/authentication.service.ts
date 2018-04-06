@@ -23,6 +23,7 @@ export class AuthenticationService {
        if (signedInUser) {
          let uid = firebase.auth().currentUser.uid;
          this.authenticatedUsername = uid;
+         console.log("In Login: " + this.authenticatedUsername)
          this.userService.userExists(uid).subscribe(user => {
            if (!user) {
              const newUser = new User(
@@ -48,7 +49,7 @@ export class AuthenticationService {
   }
 
   isAdmin() {
-    console.log(this.userDetails)
+    console.log(this.authenticatedUsername)
     return true;
   }
 
