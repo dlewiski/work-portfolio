@@ -8,6 +8,7 @@ import { AuthGuardService } from '../services/auth-guard.service';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user.model';
 import { FirebaseObjectObservable } from 'angularfire2/database';
+import { Subscription } from 'rxjs/Subscription';
 
 
 
@@ -36,14 +37,15 @@ export class AdminComponent implements OnInit {
     this.AuthenticationService.user.subscribe(user => {
     if (user != null) {
       this.currentUserUID = user.uid;
+      console.log("before function" + this.currentUserUID);
       }
     })
 
     this.UserService.getUserByUID(this.currentUserUID).subscribe(dataLastEmittedFromObserver => {
+      console.log("after function" + this.currentUserUID);
       console.log(dataLastEmittedFromObserver[0]);
-      this.currentUser = new User(dataLastEmittedFromObserver[3], dataLastEmittedFromObserver[1],  dataLastEmittedFromObserver[2]);
+      this.currentUser = new User(dataLastEmittedFromObserver[0], dataLastEmittedFromObserver[0],  dataLastEmittedFromObserver[0]);
       this.currentUser.admin = dataLastEmittedFromObserver[0];
-      // console.log(this.currentUser.userName, this.currentUser.userEmail, this.currentUser.uid, this.currentUser.admin)
     });
   }
 

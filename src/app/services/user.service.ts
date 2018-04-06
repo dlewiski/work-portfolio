@@ -8,10 +8,13 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UserService {
   users: FirebaseListObservable<any[]>;
-  constructor(private database: AngularFireDatabase) { }
+  currentUserUID: string;
+  constructor(public database: AngularFireDatabase) { }
 
-  getUserByUID(uid:string){
-    let results = this.database.list('/users', {query: {orderByChild: 'uid', equalTo: uid}});
+  getUserByUID(uid: string): FirebaseListObservable<any[]> {
+    this.currentUserUID = uid
+    console.log("IN FUNCTION: " + this.currentUserUID)
+    let results = this.database.list('users/', {query: {orderByChild: `uid`, equalTo: uid}});
     return results;
   }
 
