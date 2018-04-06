@@ -17,11 +17,20 @@ export class AdminComponent implements OnInit {
 
   private isLoggedIn: Boolean;
   private user;
-  
+
   constructor(private BlogService: BlogService,
               private ProjectService: ProjectService,
               private AuthenticationService: AuthenticationService,
-              private AuthGuardService: AuthGuardService) { }
+              private AuthGuardService: AuthGuardService) {
+                this.AuthenticationService.user.subscribe(user => {
+                if (user === null) {
+                   this.isLoggedIn = false;
+                } else {
+                   this.isLoggedIn = true;
+                   console.log(user.displayName); 
+                }
+              });
+            }
 
   ngOnInit() {
   }

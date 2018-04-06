@@ -20,6 +20,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthGuardService } from './services/auth-guard.service'
 import { AuthenticationService } from './services/authentication.service';
 import { LoginComponent } from './login/login.component';
+import { UserService } from './services/user.service';
 
 
 export const firebaseConfig = {
@@ -50,7 +51,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthGuardService, AuthenticationService ],
+  providers: [AuthGuardService, AuthenticationService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
