@@ -10,26 +10,21 @@ import { User } from '../models/user.model'
 export class AuthenticationService {
   user: Observable<firebase.User>;
   authenticatedUsername: string;
-
-
   private userDetails: firebase.User = null;
-  // private admin: firebase.User.admin
 
 
   constructor(private router: Router, public afAuth: AngularFireAuth, public userService: UserService) {
     this.user = afAuth.authState;
   }
 
-  signInWithEmail(email, password) {
-    const credential = firebase.auth.EmailAuthProvider.credential( email, password );
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-    }
-
   login() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     .then(signedInUser => {
        if (signedInUser) {
+         // console.log(signedInUser.user.displayName, signedInUser.user.uid, signedInUser.user.email, signedInUser.admin);
          let uid = firebase.auth().currentUser.uid;
+         this.currentUser = signedInUser.user.displayName;
+         // console.log("uid: " + uid + "currentUser: " + this.currentUser)
          this.authenticatedUsername = uid;
          this.userService.userExists(uid).subscribe(user => {
            if (!user) {
@@ -51,9 +46,14 @@ export class AuthenticationService {
   if (this.userDetails == null ) {
       return false;
     } else {
-      console.log(this.userDetails);
       return true;
     }
+  }
+
+  isAdmin() {
+    let currentUser = this.userService.getUserByUID
+    console.log(currentUser)
+    return true;
   }
 
 }

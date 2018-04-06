@@ -26,10 +26,10 @@ export class LoginComponent implements OnInit {
               this.user = afAuth.authState;
               }
 
-  signInWithEmail(userName: string, userEmail: string) {
-    this.AuthenticationService.signInWithEmail(userName, userEmail);
-    this.router.navigate(['']);
-  }
+  // signInWithEmail(userName: string, userEmail: string) {
+  //   this.AuthenticationService.signInWithEmail(userName, userEmail);
+  //   this.router.navigate(['']);
+  // }
 
   // createAccount(userName: string, userEmail: string) {
   //   let newUser: User = new User(userName, userEmail);

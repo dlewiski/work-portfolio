@@ -10,10 +10,6 @@ export class UserService {
   users: FirebaseListObservable<any[]>;
   constructor(private database: AngularFireDatabase) { }
 
-  getUserByUsername(username: string): FirebaseListObservable<any[]> {
-    return this.database.list(`users`, {query: {orderByChild: 'username', equalTo: username}});
-  }
-
   getUserByUID(uid:string): FirebaseListObservable<any[]>{
     return this.database.list(`users`, {query: {orderByChild: 'uid', equalTo: uid}});
   }
