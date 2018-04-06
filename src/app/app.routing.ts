@@ -8,7 +8,6 @@ import { AdminComponent } from './admin/admin.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { AuthGuardService } from './services/auth-guard.service';
-import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   {
