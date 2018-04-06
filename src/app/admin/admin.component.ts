@@ -27,7 +27,6 @@ export class AdminComponent implements OnInit {
                    this.isLoggedIn = false;
                 } else {
                    this.isLoggedIn = true;
-                   console.log(user.displayName); 
                 }
               });
             }

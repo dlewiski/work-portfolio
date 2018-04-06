@@ -10,7 +10,11 @@ import { User } from '../models/user.model'
 export class AuthenticationService {
   user: Observable<firebase.User>;
   authenticatedUsername: string;
+
+
   private userDetails: firebase.User = null;
+  // private admin: firebase.User.admin
+
 
   constructor(private router: Router, public afAuth: AngularFireAuth, public userService: UserService) {
     this.user = afAuth.authState;
@@ -21,7 +25,7 @@ export class AuthenticationService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
     }
 
-    login() {
+  login() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     .then(signedInUser => {
        if (signedInUser) {
@@ -30,8 +34,7 @@ export class AuthenticationService {
          this.userService.userExists(uid).subscribe(user => {
            if (!user) {
              const newUser = new User(
-               signedInUser.user.displayName, signedInUser.user.uid, signedInUser.user.email
-             );
+             signedInUser.user.displayName, signedInUser.user.uid, signedInUser.user.email);
              this.userService.createNewUser(newUser);
            }
          });
@@ -48,6 +51,7 @@ export class AuthenticationService {
   if (this.userDetails == null ) {
       return false;
     } else {
+      console.log(this.userDetails);
       return true;
     }
   }
