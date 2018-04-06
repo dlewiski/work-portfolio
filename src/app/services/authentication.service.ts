@@ -23,7 +23,6 @@ export class AuthenticationService {
        if (signedInUser) {
          // console.log(signedInUser.user.displayName, signedInUser.user.uid, signedInUser.user.email, signedInUser.admin);
          let uid = firebase.auth().currentUser.uid;
-         this.currentUser = signedInUser.user.displayName;
          // console.log("uid: " + uid + "currentUser: " + this.currentUser)
          this.authenticatedUsername = uid;
          this.userService.userExists(uid).subscribe(user => {
@@ -50,10 +49,8 @@ export class AuthenticationService {
     }
   }
 
-  isAdmin() {
-    let currentUser = this.userService.getUserByUID
-    console.log(currentUser)
-    return true;
+  assignUser() {
+
   }
 
 }

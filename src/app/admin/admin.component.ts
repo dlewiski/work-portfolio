@@ -5,6 +5,11 @@ import { Project } from '../models/project.model';
 import { ProjectService } from '../services/project.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { AuthGuardService } from '../services/auth-guard.service';
+import { UserService } from '../services/user.service';
+import { User } from '../models/user.model';
+import { FirebaseObjectObservable } from 'angularfire2/database';
+
+
 
 @Component({
   selector: 'app-admin',
@@ -14,24 +19,30 @@ import { AuthGuardService } from '../services/auth-guard.service';
 })
 
 export class AdminComponent implements OnInit {
-
+  currentUser: User;
   private isLoggedIn: Boolean;
   private user;
 
+  private currentUserUID: string;
+
   constructor(private BlogService: BlogService,
               private ProjectService: ProjectService,
+              private UserService: UserService,
               private AuthenticationService: AuthenticationService,
               private AuthGuardService: AuthGuardService) {
-                this.AuthenticationService.user.subscribe(user => {
-                if (user === null) {
-                   this.isLoggedIn = false;
-                } else {
-                   this.isLoggedIn = true;
-                }
-              });
-            }
+              }
 
   ngOnInit() {
+    this.AuthenticationService.user.subscribe(user => {
+    if (user != null) {
+      this.currentUserUID = user.uid;
+      }
+    })
+
+    this.UserService.getUserByUID(this.currentUserUID).subscribe(dataLastEmittedFromObserver => {
+      this.currentUser = new User(dataLastEmittedFromObserver[3], dataLastEmittedFromObserver[1],  dataLastEmittedFromObserver[2]);
+      this.currentUser.admin = dataLastEmittedFromObserver[0];
+    });
   }
 
   submitBlog(title: string, postBody: string){
