@@ -32,12 +32,10 @@ export class AuthenticationService {
 
          this.userService.userExists(uid).subscribe(user => {
            if (!user) {
-             console.log(signedInUser.user)
-             // const newUser = new User(
-             //   signedInUser.user.displayName, signedInUser.user.uid
-             // );
-             // this.userService.createNewUser(newUser);
-
+             const newUser = new User(
+               signedInUser.user.displayName, signedInUser.user.uid, signedInUser.user.email
+             );
+             this.userService.createNewUser(newUser);
            }
          });
        }
