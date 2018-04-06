@@ -18,8 +18,8 @@ export class AppComponent {
   user;
   databaseUser;
 
-  constructor(private router: Router, public authService: AuthenticationService, public userService: UserService) {
-    this.authService.user.subscribe(user => {
+  constructor(private router: Router, public AuthenticationService: AuthenticationService, public userService: UserService) {
+    this.AuthenticationService.user.subscribe(user => {
       if (user == null) {
         this.isLoggedIn = false;
       } else {

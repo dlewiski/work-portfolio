@@ -39,22 +39,22 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-    .then(signedInUser => {
-       if (signedInUser) {
-         let uid = firebase.auth().currentUser.uid;
-         this.authenticatedUserName = uid;
-         this.UserService.userExists(uid).subscribe(user => {
-           if (!user) {
-             const newUser = new User(
-               signedInUser.user.displayName, signedInUser.user.uid, signedInUser.user.email
-             );
-             this.UserService.createNewUser(newUser);
-           }
-         });
-       }
-     });
-   }
+  // login() {
+  //   this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+  //   .then(signedInUser => {
+  //      if (signedInUser) {
+  //        let uid = firebase.auth().currentUser.uid;
+  //        this.authenticatedUserName = uid;
+  //        this.UserService.userExists(uid).subscribe(user => {
+  //          if (!user) {
+  //            const newUser = new User(
+  //              signedInUser.user.displayName, signedInUser.user.uid, signedInUser.user.email
+  //            );
+  //            this.UserService.createNewUser(newUser);
+  //          }
+  //        });
+  //      }
+  //    });
+  //  }
 
 }
