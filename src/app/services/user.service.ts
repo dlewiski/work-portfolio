@@ -12,8 +12,6 @@ export class UserService {
   constructor(public database: AngularFireDatabase) { }
 
   getUserByUID(uid: string): FirebaseListObservable<any[]> {
-    this.currentUserUID = uid
-    console.log("IN FUNCTION: " + this.currentUserUID)
     let results = this.database.list('users/', {query: {orderByChild: `uid`, equalTo: uid}});
     return results;
   }

@@ -25,6 +25,7 @@ export class AdminComponent implements OnInit {
   private user;
 
   private currentUserUID: string;
+  currentUserKey: string;
 
   constructor(private BlogService: BlogService,
               private ProjectService: ProjectService,
@@ -37,15 +38,16 @@ export class AdminComponent implements OnInit {
     this.AuthenticationService.user.subscribe(user => {
     if (user != null) {
       this.currentUserUID = user.uid;
-      console.log("before function" + this.currentUserUID);
       }
     })
 
     this.UserService.getUserByUID(this.currentUserUID).subscribe(dataLastEmittedFromObserver => {
       console.log("after function" + this.currentUserUID);
-      console.log(dataLastEmittedFromObserver[0]);
-      this.currentUser = new User(dataLastEmittedFromObserver[0], dataLastEmittedFromObserver[0],  dataLastEmittedFromObserver[0]);
-      this.currentUser.admin = dataLastEmittedFromObserver[0];
+      this.currentUser = new User(dataLastEmittedFromObserver[0].userName, dataLastEmittedFromObserver[0].uid,  dataLastEmittedFromObserver[0].userEmail);
+      this.currentUser.admin = dataLastEmittedFromObserver[0].admin;
+      this.currentUserKey = dataLastEmittedFromObserver[0].$key;
+      console.log(this.currentUser);
+      console.log(this.currentUserKey);
     });
   }
 
