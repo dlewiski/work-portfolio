@@ -26,6 +26,8 @@
 
 <footer class="footer">
   <div class="container">
-    <a class="text-muted" routerLink="admin">Admin</a>
+    <div *ngIf="isLoggedIn">
+      <a class="text-muted" (click)="isAdmin()" routerLink="admin">Admin</a>
+    </div>
   </div>
 </footer>

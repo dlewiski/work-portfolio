@@ -47,4 +47,9 @@ export class AuthenticationService {
     }
   }
 
+  isAdmin() {
+    console.log(this.userDetails)
+    return true;
+  }
+
 }

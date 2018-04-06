@@ -14,6 +14,7 @@ export class AppComponent {
   private isLoggedIn: boolean;
   private userName: string;
   private userUID: string;
+  private isAdmin: boolean;
 
   user;
   databaseUser;
@@ -36,6 +37,10 @@ export class AppComponent {
 
   logout() {
     this.AuthenticationService.logout();
+  }
+
+  isAdmin() {
+    this.AuthenticationService.isAdmin();
   }
 
 }

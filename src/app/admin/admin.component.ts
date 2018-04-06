@@ -20,12 +20,12 @@ import { Subscription } from 'rxjs/Subscription';
 })
 
 export class AdminComponent implements OnInit {
-  currentUser: User;
   private isLoggedIn: Boolean;
   private user;
-
+  private userName: string;
   private currentUserUID: string;
-  currentUserKey: string;
+  private userEmail: string;
+
 
   constructor(private BlogService: BlogService,
               private ProjectService: ProjectService,
@@ -36,19 +36,19 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     this.AuthenticationService.user.subscribe(user => {
-    if (user != null) {
-      this.currentUserUID = user.uid;
+      if (user != null) {
+        this.currentUserUID = user.uid;
+        this.currentUserUID = user.uid;
+        this.userEmail = user.email;
       }
     })
 
-    this.UserService.getUserByUID(this.currentUserUID).subscribe(dataLastEmittedFromObserver => {
-      console.log("after function" + this.currentUserUID);
-      this.currentUser = new User(dataLastEmittedFromObserver[0].userName, dataLastEmittedFromObserver[0].uid,  dataLastEmittedFromObserver[0].userEmail);
-      this.currentUser.admin = dataLastEmittedFromObserver[0].admin;
-      this.currentUserKey = dataLastEmittedFromObserver[0].$key;
-      console.log(this.currentUser);
-      console.log(this.currentUserKey);
-    });
+    // this.UserService.filterUser(this.currentUserUID).subscribe(dataLastEmittedFromObserver => {
+    //   console.log("after function: " + this.currentUserUID);
+    //   this.currentUser = new User(dataLastEmittedFromObserver[0].userName, dataLastEmittedFromObserver[0].uid,  dataLastEmittedFromObserver[0].userEmail);
+    //   this.currentUser.admin = dataLastEmittedFromObserver[0].admin;
+    //   console.log(this.currentUser);
+    // });
   }
 
   submitBlog(title: string, postBody: string){

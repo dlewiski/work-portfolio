@@ -7,13 +7,14 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserService {
-  users: FirebaseListObservable<User[]>;
+  users: FirebaseListObservable<any[]>;
   currentUserUID: string;
+  returnedUser: FirebaseListObservable<User[]>;
   constructor(public database: AngularFireDatabase) { }
-  private
+
 
   getUserByUID(userUID: string): FirebaseListObservable<any[]> {
-    console.log("In function: " + userUID);
+    // console.log("In function: " + userUID);
     return this.database.list(`users`, {query: {orderByChild: 'uid', equalTo: userUID}});
   }
 
@@ -24,5 +25,17 @@ export class UserService {
   userExists(uid: string): Observable<boolean> {
     return this.getUserByUID(uid).map(data => !!data[0]);
    }
+
+  filterUser(uid: string): FirebaseListObservable<any[]> {
+    console.log("In function: " + uid);
+    this.returnedUser = this.database.list('/users', {
+        query: {
+            orderByChild: 'uid',
+            equalTo: uid,
+        }
+    });
+    console.log(this.returnedUser)
+    return this.returnedUser;
+  }
 
 }
