@@ -21,9 +21,7 @@ export class AuthenticationService {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     .then(signedInUser => {
        if (signedInUser) {
-         // console.log(signedInUser.user.displayName, signedInUser.user.uid, signedInUser.user.email, signedInUser.admin);
          let uid = firebase.auth().currentUser.uid;
-         // console.log("uid: " + uid + "currentUser: " + this.currentUser)
          this.authenticatedUsername = uid;
          this.userService.userExists(uid).subscribe(user => {
            if (!user) {
@@ -47,10 +45,6 @@ export class AuthenticationService {
     } else {
       return true;
     }
-  }
-
-  assignUser() {
-
   }
 
 }

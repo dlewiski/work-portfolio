@@ -40,8 +40,10 @@ export class AdminComponent implements OnInit {
     })
 
     this.UserService.getUserByUID(this.currentUserUID).subscribe(dataLastEmittedFromObserver => {
+      console.log(dataLastEmittedFromObserver[0]);
       this.currentUser = new User(dataLastEmittedFromObserver[3], dataLastEmittedFromObserver[1],  dataLastEmittedFromObserver[2]);
       this.currentUser.admin = dataLastEmittedFromObserver[0];
+      // console.log(this.currentUser.userName, this.currentUser.userEmail, this.currentUser.uid, this.currentUser.admin)
     });
   }
 

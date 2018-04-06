@@ -14,27 +14,19 @@ export class AuthGuardService implements CanActivate {
   constructor(private router: Router, public authService: AuthenticationService) {
   }
 
-  // canActivate(): Observable<boolean> {
-  //   return this.authService.afAuth.authState
-  //               .take(1)
-  //               .map(authState => !!authState)
-  //               .do(authenticated => {
-  //                 if (!authenticated) {
-  //                     alert("Access denied.");
-  //                     this.router.navigate(['']);
-  //                     return false;
-  //                 } else {
-  //                   return true;
-  //                 }
-  //               });
-  // }
-
-  canActivate() {
-    return this.isAdmin();
-  }
-
-  isAdmin(){
-    return this.authService.isAdmin();
+  canActivate(): Observable<boolean> {
+    return this.authService.afAuth.authState
+                .take(1)
+                .map(authState => !!authState)
+                .do(authenticated => {
+                  if (!authenticated) {
+                      alert("Access denied.");
+                      this.router.navigate(['']);
+                      return false;
+                  } else {
+                    return true;
+                  }
+                });
   }
 
 }
