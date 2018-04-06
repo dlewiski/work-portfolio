@@ -8,6 +8,9 @@
 
 This web application will be used to showcase projects I have take part in, and feature a blog that documents the projects (coding and otherwise) that are interesting to me.
 
+#### Deployment
+Website is available at https://work-portfolio-1c877.firebaseapp.com/
+
 #### Behavior
 1. Allows user(me) to post projects to my portfolio page from the admin page.
 2. Allows user(me) to create blog posts - allowing me to share more about my interests.
@@ -19,7 +22,7 @@ This web application will be used to showcase projects I have take part in, and 
 6. Displays a list of blog posts that can be filtered by topic.
 7. I would like to add admin authentication so only I can upload projects and blog posts.
 8. I would like to add the ability to upload photos to show off in my blog post and projects.
-9. I would like to allow the ability to leave comments on blog posts. 
+9. I would like to allow the ability to leave comments on blog posts.
 
 ## Setup/Installation Requirements
 
