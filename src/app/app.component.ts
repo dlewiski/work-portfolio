@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   providers: [AuthenticationService, UserService]
 })
 export class AppComponent {
-  title = 'pdxflit';
+  title = 'Hi Anna-Marie';
   private isLoggedIn: boolean;
   private userName: string;
   private userUID: string;
@@ -37,6 +37,5 @@ export class AppComponent {
   logout() {
     this.AuthenticationService.logout();
   }
-
 
 }

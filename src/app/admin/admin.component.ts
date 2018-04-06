@@ -4,18 +4,24 @@ import { Blog } from '../models/blog.model';
 import { Project } from '../models/project.model';
 import { ProjectService } from '../services/project.service';
 import { AuthenticationService } from '../services/authentication.service';
-
+import { AuthGuardService } from '../services/auth-guard.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
-  providers: [BlogService, ProjectService]
+  providers: [BlogService, ProjectService, AuthenticationService, AuthGuardService]
 })
 
 export class AdminComponent implements OnInit {
 
-  constructor(private BlogService: BlogService, private ProjectService: ProjectService) { }
+  private isLoggedIn: Boolean;
+  private user;
+  
+  constructor(private BlogService: BlogService,
+              private ProjectService: ProjectService,
+              private AuthenticationService: AuthenticationService,
+              private AuthGuardService: AuthGuardService) { }
 
   ngOnInit() {
   }

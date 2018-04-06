@@ -39,10 +39,6 @@ const appRoutes: Routes = [
   {
     path: 'projects/:id',
     component: ProjectDetailsComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
   }
 ];
 

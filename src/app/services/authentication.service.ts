@@ -26,10 +26,7 @@ export class AuthenticationService {
     .then(signedInUser => {
        if (signedInUser) {
          let uid = firebase.auth().currentUser.uid;
-
-        //  const username = signedInUser.additionalUserInfo.username;
          this.authenticatedUsername = uid;
-
          this.userService.userExists(uid).subscribe(user => {
            if (!user) {
              const newUser = new User(
@@ -54,6 +51,5 @@ export class AuthenticationService {
       return true;
     }
   }
-
 
 }
