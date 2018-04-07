@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Hi Anna-Marie';
   private isLoggedIn: boolean;
+  private isAdmin: boolean;
   private userName: string;
   private userUID: string;
 
@@ -27,8 +28,18 @@ export class AppComponent {
         this.isLoggedIn = true;
         this.userName = user.displayName;
         this.userUID = user.uid;
+        console.log(this.userUID)
       }
     });
+
+    this.AuthenticationService.user.subscribe(user => {
+      if (this.userUID == "wyFj5q0DX2dVJybVVUgSgF6QWw33") {
+        this.isAdmin = true;
+      } else {
+        this.isAdmin = false;
+      }
+    });
+
   }
 
   login() {
@@ -37,10 +48,6 @@ export class AppComponent {
 
   logout() {
     this.AuthenticationService.logout();
-  }
-
-  isAdmin() {
-    this.AuthenticationService.isAdmin();
   }
 
 }

@@ -9,7 +9,7 @@ import { User } from '../models/user.model'
 @Injectable()
 export class AuthenticationService {
   user: Observable<firebase.User>;
-  authenticatedUsername: string;
+  authenticatedUserUID: string;
   private userDetails: firebase.User = null;
 
 
@@ -22,8 +22,8 @@ export class AuthenticationService {
     .then(signedInUser => {
        if (signedInUser) {
          let uid = firebase.auth().currentUser.uid;
-         this.authenticatedUsername = uid;
-         console.log("In Login: " + this.authenticatedUsername)
+         this.authenticatedUserUID = uid;
+         console.log("In Login: " + this.authenticatedUserUID)
          this.userService.userExists(uid).subscribe(user => {
            if (!user) {
              const newUser = new User(
@@ -49,8 +49,12 @@ export class AuthenticationService {
   }
 
   isAdmin() {
-    console.log(this.authenticatedUsername)
-    return true;
+    if (this.authenticatedUserUID === "wyFj5q0DX2dVJybVVUgSgF6QWw33" ) {
+      console.log(this.authenticatedUserUID + "this means you ARE an admin")
+      return true;
+    } else {
+      console.log(this.authenticatedUserUID + "this means you ARE NOT an admin")
+      return false;
+    }
   }
-
 }
