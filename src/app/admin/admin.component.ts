@@ -9,8 +9,7 @@ import { UserService } from '../services/user.service';
 import { User } from '../models/user.model';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 import { Subscription } from 'rxjs/Subscription';
-
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -21,6 +20,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 export class AdminComponent implements OnInit {
   private isLoggedIn: Boolean;
+  private isAdmin: boolean;
   private user;
   private userName: string;
   private currentUserUID: string;
@@ -31,6 +31,7 @@ export class AdminComponent implements OnInit {
               private ProjectService: ProjectService,
               private UserService: UserService,
               private AuthenticationService: AuthenticationService,
+              private router: Router,
               private AuthGuardService: AuthGuardService) {
               }
 
@@ -38,17 +39,18 @@ export class AdminComponent implements OnInit {
     this.AuthenticationService.user.subscribe(user => {
       if (user != null) {
         this.currentUserUID = user.uid;
-        this.currentUserUID = user.uid;
         this.userEmail = user.email;
       }
     })
 
-    // this.UserService.filterUser(this.currentUserUID).subscribe(dataLastEmittedFromObserver => {
-    //   console.log("after function: " + this.currentUserUID);
-    //   this.currentUser = new User(dataLastEmittedFromObserver[0].userName, dataLastEmittedFromObserver[0].uid,  dataLastEmittedFromObserver[0].userEmail);
-    //   this.currentUser.admin = dataLastEmittedFromObserver[0].admin;
-    //   console.log(this.currentUser);
-    // });
+    this.AuthenticationService.user.subscribe(user => {
+      if (this.currentUserUID == "wyFj5q0DX2dVJybVVUgSgF6QWw33") {
+        this.isAdmin = true;
+      } else {
+        this.router.navigate([''])
+        this.isAdmin = false;
+      }
+    });
   }
 
   submitBlog(title: string, postBody: string){

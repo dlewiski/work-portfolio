@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
   providers: [AuthenticationService, UserService]
 })
+
 export class AppComponent {
   title = 'Hi Anna-Marie';
   private isLoggedIn: boolean;
@@ -16,9 +17,7 @@ export class AppComponent {
   private userName: string;
   private userUID: string;
 
-
   user;
-  databaseUser;
 
   constructor(private router: Router, public AuthenticationService: AuthenticationService, public userService: UserService) {
     this.AuthenticationService.user.subscribe(user => {
@@ -28,7 +27,6 @@ export class AppComponent {
         this.isLoggedIn = true;
         this.userName = user.displayName;
         this.userUID = user.uid;
-        console.log(this.userUID)
       }
     });
 
@@ -36,7 +34,7 @@ export class AppComponent {
       if (this.userUID == "wyFj5q0DX2dVJybVVUgSgF6QWw33") {
         this.isAdmin = true;
       } else {
-        this.isAdmin = false;
+        this.router.navigate
       }
     });
 
