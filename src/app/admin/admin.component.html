@@ -11,7 +11,15 @@
     <br>
     <textarea #newPostBody id="blogTextArea"></textarea>
   </div>
-  <button (click)="submitBlog(newTitle.value, newPostBody.value); newTitle.value=''; newPostBody.value=''">Post to Blog</button>
+  <div>
+  <label>Tags:</label>
+  <select #postTags>
+    <option [value]="coding"> Coding </option>
+    <option [value]="clothingDesign"> Clothing Design </option>
+    <option [value]="photography"> Photography </option>
+    <option [value]="photography"> Graphic Design </option>
+  </select>
+  <button (click)="submitBlog(newTitle.value, newPostBody.value, postTags.value); postTags.value=''; newTitle.value=''; newPostBody.value=''">Post to Blog</button>
 </div>
 
 <hr>

@@ -50,10 +50,8 @@ export class AuthenticationService {
 
   isAdmin() {
     if (this.authenticatedUserUID === "wyFj5q0DX2dVJybVVUgSgF6QWw33" ) {
-      console.log(this.authenticatedUserUID + "this means you ARE an admin")
       return true;
     } else {
-      console.log(this.authenticatedUserUID + "this means you ARE NOT an admin")
       return false;
     }
   }
