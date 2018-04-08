@@ -1,56 +1,74 @@
-<h3>New Blog Post</h3>
-<p>Use this form to create new blog posts.</p>
-<div>
-  <div>
-    <label>Blog Title:</label>
-    <br>
-    <input #newTitle>
+<div class="largeButton" *ngIf="!projectTime && !bloggingTime && !uploadTime">
+  <button (click)="timeToBlog()">Post to Blog</button>
+</div>
+
+<div class="adminForm" *ngIf="bloggingTime">
+  <h3>New Blog Post</h3>
+  <p>Use this form to create new blog posts.</p>
+    <div>
+      <div>
+        <label>Blog Title:</label>
+        <br>
+        <input #newTitle>
+      </div>
+      <div>
+        <label>Blog Body:</label>
+        <br>
+        <textarea #newPostBody id="blogTextArea"></textarea>
+      </div>
+      <div>
+        <label>Tags:</label>
+        <select #postTags>
+          <option [value]="coding"> Coding </option>
+          <option [value]="clothingDesign"> Clothing Design </option>
+          <option [value]="photography"> Photography </option>
+          <option [value]="photography"> Graphic Design </option>
+        </select>
+      <button (click)="submitBlog(newTitle.value, newPostBody.value, postTags.value); postTags.value=''; newTitle.value=''; newPostBody.value=''">Post to Blog</button>
+      <button (click)="doneBlogging()">Done</button>
+    </div>
   </div>
+</div>
+<hr>
+<div class="largeButton" *ngIf="!projectTime && !bloggingTime && !uploadTime">
+  <button (click)="timeForProjects()">Add to Portfolio</button>
+</div>
+<div class="adminForm" *ngIf="projectTime">
+  <h3>New Project Post</h3>
+  <p>Use this form to create new project for your portfolio.</p>
   <div>
-    <label>Blog Body:</label>
-    <br>
-    <textarea #newPostBody id="blogTextArea"></textarea>
+    <div>
+      <label>Project Title:</label>
+      <br>
+      <input #newProjectTitle>
+    </div>
+    <div>
+      <label>Project Description:</label>
+      <br>
+      <textarea #newProjectDescription id="projectTextArea"></textarea>
+    </div>
+    <div>
+      <label>Project Challenges:</label>
+      <br>
+      <textarea #newProjectChallenges id="projectChallengeArea"></textarea>
+    </div>
+    <div>
+      <label>Project URL:</label>
+      <br>
+      <input #newProjectUrl>
+      <br>
+    </div>
+    <button (click)="submitProject(newProjectTitle.value, newProjectDescription.value, newProjectChallenges.value, newProjectUrl.value); newProjectTitle.value=''; newProjectDescription.value=''; newProjectChallenges.value=''; newProjectUrl.value=''">Post Project</button>
+    <button (click)="doneWithProjects()">Done</button>
   </div>
-  <div>
-  <label>Tags:</label>
-  <select #postTags>
-    <option [value]="coding"> Coding </option>
-    <option [value]="clothingDesign"> Clothing Design </option>
-    <option [value]="photography"> Photography </option>
-    <option [value]="photography"> Graphic Design </option>
-  </select>
-  <button (click)="submitBlog(newTitle.value, newPostBody.value, postTags.value); postTags.value=''; newTitle.value=''; newPostBody.value=''">Post to Blog</button>
 </div>
 
 <hr>
-
-<h3>New Project Post</h3>
-<p>Use this form to create new project for your portfolio.</p>
-<div>
-  <div>
-    <label>Project Title:</label>
-    <br>
-    <input #newProjectTitle>
-  </div>
-  <div>
-    <label>Project Description:</label>
-    <br>
-    <textarea #newProjectDescription id="projectTextArea"></textarea>
-  </div>
-  <div>
-    <label>Project Challenges:</label>
-    <br>
-    <textarea #newProjectChallenges id="projectChallengeArea"></textarea>
-  </div>
-  <div>
-    <label>Project URL:</label>
-    <br>
-    <input #newProjectUrl>
-    <br>
-  </div>
-  <button (click)="submitProject(newProjectTitle.value, newProjectDescription.value, newProjectChallenges.value, newProjectUrl.value); newProjectTitle.value=''; newProjectDescription.value=''; newProjectChallenges.value=''; newProjectUrl.value=''">Post Project</button>
+<div class="largeButton" *ngIf="!projectTime && !bloggingTime && !uploadTime">
+  <button (click)="timeForUploading()">UploadPhotos</button>
 </div>
-<hr>
+<div class="adminForm" *ngIf="uploadTime">
 <div>
   <app-uploads></app-uploads>
+  <button (click)="doneWithUploading()">Done</button>
 </div>

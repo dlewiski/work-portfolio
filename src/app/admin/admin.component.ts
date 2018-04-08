@@ -22,6 +22,9 @@ import { Router } from '@angular/router';
 
 export class AdminComponent implements OnInit {
   private isLoggedIn: Boolean;
+  bloggingTime = false;
+  uploadTime = false;
+  projectTime = false;
   private isAdmin: boolean;
   private user;
   private userName: string;
@@ -64,6 +67,30 @@ export class AdminComponent implements OnInit {
   submitProject(projectTitle: string, description: string, challenges: string, projectUrl: string){
     let newProject: Project = new Project(projectTitle, description, challenges, projectUrl);
     this.ProjectService.addNewProject(newProject);
+  }
+
+  timeToBlog() {
+    this.bloggingTime = true;
+  }
+
+  doneBlogging () {
+    this.bloggingTime = false;
+  }
+
+  doneWithProjects () {
+    this.projectTime = false;
+  }
+
+  timeForProjects () {
+    this.projectTime = true;
+  }
+
+  doneWithUploading () {
+    this.uploadTime = false;
+  }
+
+  timeForUploading () {
+    this.uploadTime = true;
   }
 
 }
