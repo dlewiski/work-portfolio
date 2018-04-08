@@ -3,6 +3,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import * as _ from 'lodash';
 import { Upload } from '../models/uploads.model';
+import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
@@ -19,15 +20,12 @@ export class UploadService {
 
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) =>  {
-        // upload in progress
         upload.progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
       },
       (error) => {
-        // upload failed
         console.log(error)
       },
       () => {
-        // upload success
         upload.url = uploadTask.snapshot.downloadURL
         upload.name = upload.file.name
         this.saveFileData(upload)
@@ -37,15 +35,15 @@ export class UploadService {
 
   private saveFileData(upload: Upload) {
      this.db.list(`${this.basePath}/`).push(upload);
-   }
+  }
 
-   deleteUpload(upload: Upload) {
+  deleteUpload(upload: Upload) {
    this.deleteFileData(upload.$key)
    .then( () => {
      this.deleteFileStorage(upload.name)
    })
    .catch(error => console.log(error))
- }
+  }
 
  private deleteFileData(key: string) {
    return this.db.list(`${this.basePath}/`).remove(key);
