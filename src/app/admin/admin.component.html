@@ -24,10 +24,10 @@
       <div>
         <label>Tags:</label>
         <select #blogTag>
-          <option [value]="coding"> Coding </option>
-          <option [value]="clothingDesign"> Clothing Design </option>
-          <option [value]="photography"> Photography </option>
-          <option [value]="photography"> Graphic Design </option>
+          <option value="coding"> Coding </option>
+          <option value="clothingDesign"> Clothing Design </option>
+          <option value="photography"> Photography </option>
+          <option value="photography"> Graphic Design </option>
         </select>
       <button (click)="submitBlog(newTitle.value, newPostBody.value, blogTag.value, blogHeader.value); blogTag.value=''; newTitle.value=''; newPostBody.value=''; blogHeader.value=''">Post to Blog</button>
       <button (click)="doneBlogging()">Done</button>
