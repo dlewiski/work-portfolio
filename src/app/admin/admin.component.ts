@@ -59,8 +59,8 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  submitBlog(title: string, postBody: string, postTags: string){
-    let newBlogPost: Blog = new Blog(title, postBody, postTags);
+  submitBlog(title: string, postBody: string, blogTag: string, blogHeader: string){
+    let newBlogPost: Blog = new Blog(title, postBody, blogTag, blogHeader);
     this.BlogService.addBlogPost(newBlogPost);
   }
 

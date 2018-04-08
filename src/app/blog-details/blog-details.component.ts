@@ -14,6 +14,7 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 export class BlogDetailsComponent implements OnInit {
   blogId: string;
   blogToDisplay;
+  
 
   constructor(private route: ActivatedRoute,
               private location: Location,
