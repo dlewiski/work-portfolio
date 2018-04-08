@@ -11,6 +11,7 @@ import { User } from '../models/user.model';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 
 @Component({
@@ -30,6 +31,7 @@ export class AdminComponent implements OnInit {
   private userName: string;
   private currentUserUID: string;
   private userEmail: string;
+  uploads: FirebaseListObservable<any[]>;
 
 
   constructor(private BlogService: BlogService,
@@ -38,10 +40,12 @@ export class AdminComponent implements OnInit {
               private AuthenticationService: AuthenticationService,
               private router: Router,
               private AuthGuardService: AuthGuardService,
-              private uploadService: UploadService) {
+              private UploadService: UploadService) {
               }
 
   ngOnInit() {
+    this.uploads = this.UploadService.getAllPhotos();
+
     this.AuthenticationService.user.subscribe(user => {
       if (user != null) {
         this.currentUserUID = user.uid;

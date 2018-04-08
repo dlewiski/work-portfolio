@@ -8,11 +8,16 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 
 @Injectable()
 export class UploadService {
-
-  constructor(private af: AngularFireAuth, private db: AngularFireDatabase) { }
-
+  uploads: FirebaseListObservable<any[]>;
   private basePath:string = '/uploads';
-  uploads: FirebaseListObservable<Upload[]>;
+
+  constructor(private af: AngularFireAuth, private db: AngularFireDatabase) {
+    this.uploads = db.list('uploads');
+  }
+
+  getAllPhotos(){
+     return this.uploads;
+   }
 
   pushUpload(upload: Upload) {
     let storageRef = firebase.storage().ref();
