@@ -20,6 +20,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthGuardService } from './services/auth-guard.service'
 import { AuthenticationService } from './services/authentication.service';
 import { UserService } from './services/user.service';
+import { UploadComponent } from './uploads/uploads.component';
+import { UploadService } from './services/uploads.service';
 
 
 export const firebaseConfig = {
@@ -38,7 +40,8 @@ export const firebaseConfig = {
     PersonalBlogComponent,
     AdminComponent,
     BlogDetailsComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthGuardService, AuthenticationService, UserService],
+  providers: [AuthGuardService, AuthenticationService, UserService, UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

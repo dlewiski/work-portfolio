@@ -3,6 +3,7 @@ import { BlogService } from '../services/blog.service';
 import { Blog } from '../models/blog.model';
 import { Project } from '../models/project.model';
 import { ProjectService } from '../services/project.service';
+import { UploadService } from '../services/uploads.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { AuthGuardService } from '../services/auth-guard.service';
 import { UserService } from '../services/user.service';
@@ -11,11 +12,12 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
-  providers: [BlogService, ProjectService, AuthenticationService, AuthGuardService]
+  providers: [BlogService, ProjectService, AuthenticationService, AuthGuardService, UploadService]
 })
 
 export class AdminComponent implements OnInit {
@@ -32,7 +34,8 @@ export class AdminComponent implements OnInit {
               private UserService: UserService,
               private AuthenticationService: AuthenticationService,
               private router: Router,
-              private AuthGuardService: AuthGuardService) {
+              private AuthGuardService: AuthGuardService,
+              private uploadService: UploadService) {
               }
 
   ngOnInit() {
