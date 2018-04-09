@@ -1,13 +1,17 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="">Anna Marie Cooper</a>
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-left">
       <li><a routerLink="about-me">About Me</a></li>
       <li><a routerLink="portfolio">Project Portfolio</a></li>
+    </ul>
+    <img src="./assets/img/beetle.gif" id="headerBeetle">
+    <a class="navbar-brand" routerLink="">Anna Marie</a>
+    <img src="./assets/img/beetleflipped.gif" id="headerBeetle">
+    <ul class="nav navbar-nav navbar-right">
       <li><a routerLink="blog">Personal Blog</a></li>
-      <li *ngIf="isLoggedIn">
+      <!-- <li *ngIf="isLoggedIn">
         <a>{{userName}}</a>
-      </li>
+      </li> -->
       <li *ngIf="isLoggedIn">
         <a (click)="logout()">Log Out</a>
       </li>
@@ -27,7 +31,30 @@
 <footer class="footer">
   <div class="container">
     <div *ngIf="isAdmin && isLoggedIn">
-      <a class="text-muted" routerLink="admin">Admin</a>
+      <table class="footerTable">
+        <div class="row">
+          <div class="col-md-2">
+            <img src="./assets/img/flowerBunch.gif" id="footerFlowers">
+          </div>
+          <div class="col-md-8">
+            <table class="footerTableSmall">
+              <div class="row">
+                <div class="col">
+                  <p>Copyright &copy; 2018 Anna-Marie Cooper. All rights reserved.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p><a routerLink="admin">Admin</a></p>
+                </div>
+              </div>
+            </table>
+          </div>
+          <div class="col-md-2">
+            <p><img src="./assets/img/flowerBunchflipped.gif" id="footerFlowers"></p>
+          </div>
+        </div>
+      </table>
     </div>
   </div>
 </footer>

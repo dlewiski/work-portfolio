@@ -1,6 +1,12 @@
-<div *ngFor="let blog of blogs | async" class="card card-default">
-  <div class="card-heading">
-   <p class="card-title"> {{blog.title}} </p>
-   <p (click)="goToBlogPostDetail(blog)">Read More...</p>
- </div>
+<div class="blogList">
+  <div *ngFor="let blog of blogs | async" class="card card-default" id="repeatedCard">
+    <div class="card">
+      <div class="cardImage">
+        <img class="card-img-top" src="{{blog.blogHeader}}" id="blogListHeader" alt="Card image cap">
+      </div>
+      <p class="card-header" id="blogListTitle"> {{blog.title}} </p>
+      <p class="card-text">{{blog.postBody}}</p>
+      <p (click)="goToBlogPostDetail(blog)">Read More...</p>
+    </div>
+  </div>
 </div>

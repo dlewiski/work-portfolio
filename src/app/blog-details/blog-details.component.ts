@@ -36,7 +36,7 @@ export class BlogDetailsComponent implements OnInit {
                                    })
                                  );
       this.blogToDisplay.date = dataLastEmittedFromObserver.date;
-      this.blogToDisplay.edited = dataLastEmittedFromObserver.author;
+      this.blogToDisplay.author = dataLastEmittedFromObserver.author;
     });
 
 
