@@ -5,6 +5,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 @Injectable()
 export class BlogService {
   blogs: FirebaseListObservable<any[]>;
+  photos: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
     this.blogs = database.list('blogs');
@@ -20,6 +21,11 @@ export class BlogService {
 
   getBlogById(blogId: string){
     return this.database.object('blogs/' + blogId);
+  }
+
+  getPhotosForPost(blogId: string){
+    this.photos = this.database.list('blogs/' + blogId + '/photoArray');
+    return this.photos
   }
 
 }

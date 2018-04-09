@@ -1,8 +1,13 @@
 <div>
-  <h3>{{(blogToDisplay | async)?.title}}</h3>
-  <h4>{{(blogToDisplay | async)?.date}}</h4>
-  <p>{{(blogToDisplay | async)?.postBody}}</p>
-  <p>{{(blogToDisplay | async)?.author}}</p>
-  <p>{{(blogToDisplay | async)?.postTags}}</p>
-  <img src="{{(blogToDisplay | async)?.blogHeader}}">
+  <img src="{{(blogToDisplay)?.blogHeader}}">
+  <h3>{{(blogToDisplay)?.title}}</h3>
+  <h4>{{(blogToDisplay)?.date}}</h4>
+  <p>{{(blogToDisplay)?.postBody}}</p>
+  <p>{{(blogToDisplay)?.author}}</p>
+  <p>{{(blogToDisplay)?.postTags}}</p>
+
+
+  <div *ngFor="let photo of photos">
+    <img src="{{photo}}" class="blogImages">
+  </div>
 </div>

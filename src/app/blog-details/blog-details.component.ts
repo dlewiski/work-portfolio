@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Blog } from '../models/blog.model';
 import { BlogService } from '../services/blog.service';
-import { FirebaseObjectObservable } from 'angularfire2/database';
+import { FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-blog-details',
@@ -12,19 +12,34 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
   providers: [BlogService]
 })
 export class BlogDetailsComponent implements OnInit {
+
   blogId: string;
-  blogToDisplay;
-  
+  blogToDisplay: Blog;
+  photos = [];
 
   constructor(private route: ActivatedRoute,
               private location: Location,
-              private BlogService: BlogService) { }
+              private BlogService: BlogService) {  }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
       this.blogId = urlParameters['id'];
     });
-    this.blogToDisplay = this.BlogService.getBlogById(this.blogId);
+    this.BlogService.getBlogById(this.blogId).subscribe(dataLastEmittedFromObserver => {
+      this.photos = []
+      this.blogToDisplay = new Blog(dataLastEmittedFromObserver.title,
+                                   dataLastEmittedFromObserver.postBody,
+                                   dataLastEmittedFromObserver.blogTag,
+                                   dataLastEmittedFromObserver.blogHeader,
+                                   dataLastEmittedFromObserver.photoArray.forEach(thisPhoto => {
+                                     this.photos.push(thisPhoto);
+                                   })
+                                 );
+      this.blogToDisplay.date = dataLastEmittedFromObserver.date;
+      this.blogToDisplay.edited = dataLastEmittedFromObserver.author;
+    });
+
+
   }
 
 }
