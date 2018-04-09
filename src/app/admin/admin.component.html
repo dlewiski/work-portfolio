@@ -34,15 +34,34 @@
                 <option value="photography"> Photography </option>
                 <option value="photography"> Graphic Design </option>
               </select>
-              <button (click)="submitBlog(newTitle.value, newPostBody.value, blogTag.value, blogHeader.value); blogTag.value=''; newTitle.value=''; newPostBody.value=''; blogHeader.value=''">Post to Blog</button>
+              <div>
+                <label>Small Photos:</label>
+                <br>
+                <input #smallPhoto01>
+                <br>
+                <input #smallPhoto02>
+                <br>
+                <input #smallPhoto03>
+                <br>
+                <input #smallPhoto04>
+                <br>
+                <input #smallPhoto05>
+                <br>
+                <input #smallPhoto06>
+                <br>
+                <input #smallPhoto07>
+              </div>
+              <br>
+              <button (click)="submitBlog(newTitle.value, newPostBody.value, blogTag.value, blogHeader.value, smallPhoto01.value, smallPhoto02.value, smallPhoto03.value, smallPhoto04.value, smallPhoto05.value, smallPhoto06.value, smallPhoto07.value); blogTag.value=''; newTitle.value=''; newPostBody.value=''; blogHeader.value=''; smallPhoto01.value=''; smallPhoto02.value=''; smallPhoto03.value=''; smallPhoto04.value=''; smallPhoto05.value=''; smallPhoto06.value=''; smallPhoto07.value=''">Post to Blog</button>
+              <br>
               <button (click)="doneBlogging()">Done</button>
             </div>
           </div>
         </td>
         <td>
           <div *ngFor="let upload of uploads | async">
-           <p>{{(upload)?.url}}</p>
-           <img class="thumbnail" src="{{(upload)?.url}}">
+             <p>{{(upload)?.url}}</p>
+             <img id="thumbnail" src="{{(upload)?.url}}">
           </div>
         </td>
       </div>
@@ -81,6 +100,7 @@
       <br>
     </div>
     <button (click)="submitProject(newProjectTitle.value, newProjectDescription.value, newProjectChallenges.value, newProjectUrl.value); newProjectTitle.value=''; newProjectDescription.value=''; newProjectChallenges.value=''; newProjectUrl.value=''">Post Project</button>
+    <br>
     <button (click)="doneWithProjects()">Done</button>
   </div>
 </div>
@@ -92,5 +112,6 @@
 <div class="adminForm" *ngIf="uploadTime">
 <div>
   <app-uploads></app-uploads>
+  <br>
   <button (click)="doneWithUploading()">Done</button>
 </div>

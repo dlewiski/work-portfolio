@@ -63,8 +63,15 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  submitBlog(title: string, postBody: string, blogTag: string, blogHeader: string){
-    let newBlogPost: Blog = new Blog(title, postBody, blogTag, blogHeader);
+  submitBlog(title: string, postBody: string, blogTag: string, blogHeader: string, smallPhoto01: string, smallPhoto02: string, smallPhoto03: string, smallPhoto04: string, smallPhoto05: string, smallPhoto06: string, smallPhoto07: string){
+    let photos = [smallPhoto01, smallPhoto02, smallPhoto03, smallPhoto04, smallPhoto05, smallPhoto06, smallPhoto07];
+    let validPhotoArray = [];
+    for (let photo of photos){
+      if ( photo != ""){
+        validPhotoArray.push(photo);
+      }
+    };
+    let newBlogPost: Blog = new Blog(title, postBody, blogTag, blogHeader, validPhotoArray);
     this.BlogService.addBlogPost(newBlogPost);
   }
 

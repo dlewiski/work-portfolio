@@ -5,19 +5,23 @@
     </div>
     Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
   </div>
+  <br>
   <div>
     <label>
       <input type="file" (change)="detectFiles($event)">
     </label>
   </div>
+  <br>
   <div>
     <button [disabled]="!selectedFiles" (click)="uploadSingle()">Upload Single</button>
   </div>
+  <br>
   <div>
     <label>
       <input type="file" (change)="detectFiles($event)" multiple>
     </label>
   </div>
+  <br>
   <div>
     <button [disabled]="!selectedFiles" (click)="uploadMulti()">Upload Multiple</button>
   </div>
