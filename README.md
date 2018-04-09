@@ -15,14 +15,15 @@ Website is available at https://work-portfolio-1c877.firebaseapp.com/
 1. Allows user(me) to post projects to my portfolio page from the admin page.
 2. Allows user(me) to create blog posts - allowing me to share more about my interests.
 3. Displays a list of blog posts on the blog page.
-4. Displays a list of projects on the project page.
-5. Allows users to login and logout, their info is saved to firebase.
+4. Shows photos in the detail page of the blog.
+5. Displays a list of projects on the project page.
+6. Allows users to login and logout, their info is saved to firebase.
+7. Has admin authentication so only certain users can upload projects and blog posts.
+8. Admin can upload photos to show off in blog post and projects.
 
 #### Future Behavior
-6. Displays a list of blog posts that can be filtered by topic.
-7. I would like to add admin authentication so only I can upload projects and blog posts.
-8. I would like to add the ability to upload photos to show off in my blog post and projects.
-9. I would like to allow the ability to leave comments on blog posts.
+9. Displays a list of blog posts that can be filtered by topic.
+10. I would like to allow the ability to leave comments on blog posts.
 
 ## Setup/Installation Requirements
 
