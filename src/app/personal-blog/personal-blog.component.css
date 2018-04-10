@@ -4,17 +4,23 @@
   width: 80% !important;
 }
 
-#blogListHeader {
+.cardImage {
+  position: relative;
+  height: 350px;
   width: 100%;
-  height: auto;
   overflow: hidden;
 }
 
-.cardImage {
-    position: center;
-    height: 350px;
-    width: 100%;
-    overflow: hidden;
+#blogListHeader {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 }
 
 #blogListTitle {
