@@ -38,8 +38,18 @@ export class BlogDetailsComponent implements OnInit {
       this.blogToDisplay.date = dataLastEmittedFromObserver.date;
       this.blogToDisplay.author = dataLastEmittedFromObserver.author;
     });
-
-
   }
 
+
+  swapPhoto(photoToSwap: string) {
+    this.photos.forEach((photo, i) => {
+      if (photo === photoToSwap){
+        this.photos.splice(i,1);
+      }
+    });
+    let tempPhotoHolder01: string = this.blogToDisplay.blogHeader;
+    let tempPhotoHolder02: string = photoToSwap;
+    this.blogToDisplay.blogHeader = photoToSwap;
+    this.photos.push(tempPhotoHolder01);
+  }
 }

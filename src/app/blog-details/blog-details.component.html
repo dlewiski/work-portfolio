@@ -1,5 +1,5 @@
 <div>
-  <img src="{{(blogToDisplay)?.blogHeader}}">
+  <img src="{{(blogToDisplay)?.blogHeader}}" class="mainBlogImage">
   <h3>{{(blogToDisplay)?.title}}</h3>
   <h4>{{(blogToDisplay)?.date}}</h4>
   <p>{{(blogToDisplay)?.postBody}}</p>
@@ -8,6 +8,6 @@
 
 
   <div *ngFor="let photo of photos">
-    <img src="{{photo}}" class="blogImages">
+    <img src="{{photo}}" class="blogImages" (click)="swapPhoto(photo)">
   </div>
 </div>
