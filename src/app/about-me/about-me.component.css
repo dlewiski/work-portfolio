@@ -1,0 +1,49 @@
+.aboutMe {
+  display: flex;
+  flex-direction: row;
+  margin-left:auto;
+  margin-right:auto;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.mainImage {
+  width: 450px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.aboutMeTitle {
+  font-size: 25px;
+  font-family: 'Poller One', cursive;
+  padding: 10px;
+}
+
+.aboutBody {
+  flex-wrap: nowrap;
+}
+
+#columnOne {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 1px solid #1a1a1a;
+  border-radius: 15px;
+  width: 50%;
+  padding: 10px;
+}
+
+#columnTwo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+  overflow: hidden;
+  padding: 10 0 10 0px;
+}
+
+hr {
+  border: 1px solid #1a1a1a;
+  width: 100%;
+}

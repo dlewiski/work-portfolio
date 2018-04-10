@@ -35,6 +35,20 @@ p {
 }
 
 #repeatedCard {
-  margin top: 10px;
-  margin-bottom: 10px;
+  margin top: 25px;
+  margin-bottom: 25px;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-text {
+  padding: 10px;
+}
+
+.blogLink {
+  padding: 10px;
+  font-weight: bold;
 }
