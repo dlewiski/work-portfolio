@@ -1,7 +1,17 @@
-<div class="largeButton" *ngIf="!projectTime && !bloggingTime && !uploadTime">
-  <button (click)="timeToBlog()">Post to Blog</button>
-</div>
+<div class="buttonRow">
 
+  <div *ngIf="!projectTime && !bloggingTime && !uploadTime">
+    <button class="largeButton" (click)="timeToBlog()">Post to Blog</button>
+  </div>
+
+  <div *ngIf="!projectTime && !bloggingTime && !uploadTime">
+    <button class="largeButton" (click)="timeForProjects()">Add to Portfolio</button>
+  </div>
+
+  <div *ngIf="!projectTime && !bloggingTime && !uploadTime">
+    <button class="largeButton" (click)="timeForUploading()">UploadPhotos</button>
+  </div>
+</div>
 
 <div class="adminForm" *ngIf="bloggingTime">
   <div class="table">
@@ -69,11 +79,8 @@
   </div>
 </div>
 
-<hr>
 
-<div class="largeButton" *ngIf="!projectTime && !bloggingTime && !uploadTime">
-  <button (click)="timeForProjects()">Add to Portfolio</button>
-</div>
+
 <div class="adminForm" *ngIf="projectTime">
   <h3>New Project Post</h3>
   <p>Use this form to create new project for your portfolio.</p>
@@ -105,10 +112,6 @@
   </div>
 </div>
 
-<hr>
-<div class="largeButton" *ngIf="!projectTime && !bloggingTime && !uploadTime">
-  <button (click)="timeForUploading()">UploadPhotos</button>
-</div>
 <div class="adminForm" *ngIf="uploadTime">
 <div>
   <app-uploads></app-uploads>

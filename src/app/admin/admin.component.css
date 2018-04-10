@@ -2,6 +2,36 @@
   width: 75px;
 }
 
+.buttonRow {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+.largeButton {
+  background-image: url("../../assets/img/lunaMoth.gif");
+  background-color: #1a1a1a;
+  width: 300px;
+  height: 250px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 15px;
+  font-family: 'Poller One', cursive;
+  font-size: 25px;
+  color: whitesmoke;
+  opacity: .9;
+  text-shadow: #1a1a1a 3px 3px 2px;
+}
+
+.largeButton:hover {
+    opacity: 1.0;
+}
+
+
 .adminForm {
-  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
 }
