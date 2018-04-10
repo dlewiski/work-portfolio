@@ -4,6 +4,8 @@
 
 #### By **Anna Marie Cooper**
 
+<kbd><img src="src/assets/img/MainScreen.png" alt=""></kbd>
+
 ## Description
 
 This web application will be used to showcase projects I have take part in, and feature a blog that documents the projects (coding and otherwise) that are interesting to me.
@@ -24,6 +26,8 @@ Website is available at https://work-portfolio-1c877.firebaseapp.com/
 #### Future Behavior
 9. Displays a list of blog posts that can be filtered by topic.
 10. I would like to allow the ability to leave comments on blog posts.
+
+<kbd><img src="src/assets/img/adminScreen.png" alt=""></kbd>
 
 ## Setup/Installation Requirements
 

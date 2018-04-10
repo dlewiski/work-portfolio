@@ -1,0 +1,47 @@
+[debug] [2018-04-10T06:01:25.864Z] ----------------------------------------------------------------------
+[debug] [2018-04-10T06:01:25.868Z] Command:       /usr/local/Cellar/node/9.8.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-04-10T06:01:25.868Z] CLI Version:   3.18.2
+[debug] [2018-04-10T06:01:25.868Z] Platform:      darwin
+[debug] [2018-04-10T06:01:25.868Z] Node Version:  v9.8.0
+[debug] [2018-04-10T06:01:25.869Z] Time:          Mon Apr 09 2018 23:01:25 GMT-0700 (PDT)
+[debug] [2018-04-10T06:01:25.869Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-10T06:01:25.926Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-10T06:01:25.926Z] > authorizing via signed-in user
+[debug] [2018-04-10T06:01:25.928Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-10T06:01:25.928Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/NfQcK0djsuPaAYPLievUajrMqGiYnSmeTqCqO1YBVQo',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Apr 09 2018 23:01:25 GMT-0700 (PDT)
+[debug] [2018-04-10T06:01:26.300Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-10T06:01:26.658Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/work-portfolio-1c877  
+  
+ Mon Apr 09 2018 23:01:26 GMT-0700 (PDT)
+[debug] [2018-04-10T06:01:27.365Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-10T06:01:27.366Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/work-portfolio-1c877/tokens  
+  
+ Mon Apr 09 2018 23:01:27 GMT-0700 (PDT)
+[debug] [2018-04-10T06:01:28.183Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'work-portfolio-1c877'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-04-10T06:01:29.425Z] >>> HTTP REQUEST PUT https://work-portfolio-1c877.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+ 
+ Mon Apr 09 2018 23:01:29 GMT-0700 (PDT)
+[debug] [2018-04-10T06:01:29.904Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax for database work-portfolio-1c877 is valid
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2018-04-10T06:01:30.523Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/work-portfolio-1c877/uploads/-L9i8GcB6x53IAMAq1cI?fileCount=22&message=  
+  
+ Mon Apr 09 2018 23:01:30 GMT-0700 (PDT)
