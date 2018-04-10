@@ -10,20 +10,20 @@
   color: whitesmoke !important;
 }
 
-  .footerTable {
-    margin-left:auto;
-    margin-right:auto;
-    width: 80% !important;
-  }
+.footerTable {
+  margin-left:auto;
+  margin-right:auto;
+  width: 80% !important;
+}
 
-  .footerTableSmall {
-    margin-left:auto;
-    margin-right:auto;
-    width: 100%;
-  }
+.footerTableSmall {
+  margin-left:auto;
+  margin-right:auto;
+  width: 100%;
+}
 
 .routerContainer {
-  width: 80%;
+  width: 100%;
   background-color: white;
   padding: 20px;
   margin-bottom: 150px;
@@ -52,4 +52,8 @@
   width: 100px;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
 }

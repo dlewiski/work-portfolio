@@ -1,13 +1,27 @@
-<div>
-  <img src="{{(blogToDisplay)?.blogHeader}}" class="mainBlogImage">
-  <h3>{{(blogToDisplay)?.title}}</h3>
-  <h4>{{(blogToDisplay)?.date}}</h4>
-  <p>{{(blogToDisplay)?.postBody}}</p>
-  <p>{{(blogToDisplay)?.author}}</p>
-  <p>{{(blogToDisplay)?.postTags}}</p>
-
-
-  <div *ngFor="let photo of photos">
-    <img src="{{photo}}" class="blogImages" (click)="swapPhoto(photo)">
+<div class = "blogDetail">
+  <div id="columnOne">
+    <div class="blogTitle">
+      <h3>{{(blogToDisplay)?.title}}</h3>
+    </div>
+    <hr>
+    <div class="blogBody">
+      <p>{{(blogToDisplay)?.postBody}}cjv;oire;jd;vj'pvajr'fjaer 'jaer jaerfjaerfaf'a fv'aerfjaervja rjvar jwjfae rojfva eo rjfa rojfawjfv arjf vaworjf vaej rgv ao rj fvaa erfjaervjaer jvarfjwjf rojfvae orjfarojf fvaworjfva jrgvaorjf  vaoejf arkemfc'edf' arfoj fvaoerj foaer fvzdofvka erjvdz'</p> 
+    </div>
+    <div class="blogDate">
+      <p>Published: {{(blogToDisplay)?.date}}</p>
+    </div>
+    <hr>
+    <div class="photoRow">
+      <p *ngFor="let photo of photos">
+        <span id="photoHolder">
+          <img src="{{photo}}" class="blogImages" (click)="swapPhoto(photo)">
+        </span>
+      </p>
+    </div>
+  </div>
+  <div id="columnTwo">
+      <div class="mainPhoto">
+        <img src="{{(blogToDisplay)?.blogHeader}}" class="mainBlogImage">
+      </div>
   </div>
 </div>
