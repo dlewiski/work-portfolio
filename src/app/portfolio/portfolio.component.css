@@ -1,0 +1,54 @@
+.projectList {
+  margin-left:auto !important;
+  margin-right:auto !important;
+  width: 80% !important;
+}
+
+.cardImage {
+  position: relative;
+  height: 350px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#projectListHeader {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+#projectListTitle {
+  color: whitesmoke;
+  font-size: 25px !important;
+  font-family: 'Poller One', cursive;
+  background-color: #1a1a1a;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+#repeatedCard {
+  margin top: 25px;
+  margin-bottom: 25px;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-text {
+  padding: 10px;
+}
+
+.projectLink {
+  padding: 10px;
+  font-weight: bold;
+}
