@@ -115,7 +115,7 @@
     <div>
       <label>Header Photo:</label>
       <br>
-      <input #blogHeader>
+      <input #photoHeader>
     </div>
     <div>
       <label>Small Photos:</label>
@@ -134,7 +134,7 @@
       <br>
       <input #smallPhoto07>
     </div>
-    <button (click)="submitProject(newProjectTitle.value, newProjectDescription.value, newProjectChallenges.value, gitUrl.value, deployedUrl.value, blogHeader.value, smallPhoto01.value, smallPhoto02.value, smallPhoto03.value, smallPhoto04.value, smallPhoto05.value, smallPhoto06.value, smallPhoto07.value); newProjectTitle.value=''; newProjectDescription.value=''; newProjectChallenges.value=''; gitUrl.value=''; deployedUrl.value=''; blogHeader.value=''; smallPhoto01.value=''; smallPhoto02.value=''; smallPhoto03.value=''; smallPhoto04.value=''; smallPhoto05.value=''; smallPhoto06.value=''; smallPhoto07.value=''">Post Project</button>
+    <button (click)="submitProject(newProjectTitle.value, newProjectDescription.value, newProjectChallenges.value, gitUrl.value, deployedUrl.value, photoHeader.value, smallPhoto01.value, smallPhoto02.value, smallPhoto03.value, smallPhoto04.value, smallPhoto05.value, smallPhoto06.value, smallPhoto07.value); newProjectTitle.value=''; newProjectDescription.value=''; newProjectChallenges.value=''; gitUrl.value=''; deployedUrl.value=''; photoHeader.value=''; smallPhoto01.value=''; smallPhoto02.value=''; smallPhoto03.value=''; smallPhoto04.value=''; smallPhoto05.value=''; smallPhoto06.value=''; smallPhoto07.value=''">Post Project</button>
     <br>
     <button (click)="doneWithProjects()">Done</button>
     <div *ngFor="let upload of uploads | async">

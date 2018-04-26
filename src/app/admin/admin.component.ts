@@ -75,8 +75,15 @@ export class AdminComponent implements OnInit {
     this.BlogService.addBlogPost(newBlogPost);
   }
 
-  submitProject(projectTitle: string, description: string, challenges: string, projectUrl: string){
-    let newProject: Project = new Project(projectTitle, description, challenges, projectUrl);
+  submitProject(projectTitle: string, description: string, challenges: string, gitUrl: string, deployedUrl: string, photoHeader: string, smallPhoto01: string, smallPhoto02: string, smallPhoto03: string, smallPhoto04: string, smallPhoto05: string, smallPhoto06: string, smallPhoto07: string){
+    let photos = [smallPhoto01, smallPhoto02, smallPhoto03, smallPhoto04, smallPhoto05, smallPhoto06, smallPhoto07];
+    let validPhotoArray = [];
+    for (let photo of photos){
+      if ( photo != ""){
+        validPhotoArray.push(photo);
+      }
+    };
+    let newProject: Project = new Project(projectTitle, description, challenges, gitUrl, deployedUrl, photoHeader, validPhotoArray);
     this.ProjectService.addNewProject(newProject);
   }
 
