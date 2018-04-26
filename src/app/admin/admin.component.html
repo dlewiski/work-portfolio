@@ -101,14 +101,46 @@
       <textarea #newProjectChallenges id="projectChallengeArea"></textarea>
     </div>
     <div>
-      <label>Project URL:</label>
+      <label>Github URL:</label>
       <br>
-      <input #newProjectUrl>
+      <input #gitUrl>
       <br>
     </div>
-    <button (click)="submitProject(newProjectTitle.value, newProjectDescription.value, newProjectChallenges.value, newProjectUrl.value); newProjectTitle.value=''; newProjectDescription.value=''; newProjectChallenges.value=''; newProjectUrl.value=''">Post Project</button>
+    <div>
+      <label>Deployed URL:</label>
+      <br>
+      <input #deployedUrl>
+      <br>
+    </div>
+    <div>
+      <label>Header Photo:</label>
+      <br>
+      <input #blogHeader>
+    </div>
+    <div>
+      <label>Small Photos:</label>
+      <br>
+      <input #smallPhoto01>
+      <br>
+      <input #smallPhoto02>
+      <br>
+      <input #smallPhoto03>
+      <br>
+      <input #smallPhoto04>
+      <br>
+      <input #smallPhoto05>
+      <br>
+      <input #smallPhoto06>
+      <br>
+      <input #smallPhoto07>
+    </div>
+    <button (click)="submitProject(newProjectTitle.value, newProjectDescription.value, newProjectChallenges.value, gitUrl.value, deployedUrl.value, blogHeader.value, smallPhoto01.value, smallPhoto02.value, smallPhoto03.value, smallPhoto04.value, smallPhoto05.value, smallPhoto06.value, smallPhoto07.value); newProjectTitle.value=''; newProjectDescription.value=''; newProjectChallenges.value=''; gitUrl.value=''; deployedUrl.value=''; blogHeader.value=''; smallPhoto01.value=''; smallPhoto02.value=''; smallPhoto03.value=''; smallPhoto04.value=''; smallPhoto05.value=''; smallPhoto06.value=''; smallPhoto07.value=''">Post Project</button>
     <br>
     <button (click)="doneWithProjects()">Done</button>
+    <div *ngFor="let upload of uploads | async">
+       <p>{{(upload)?.url}}</p>
+       <img id="thumbnail" src="{{(upload)?.url}}">
+    </div>
   </div>
 </div>
 
