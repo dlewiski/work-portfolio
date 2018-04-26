@@ -1,6 +1,27 @@
-<div>
-  <h3>{{(projectToDisplay | async)?.projectTitle}}</h3>
-  <h4>{{(projectToDisplay | async)?.description}}</h4>
-  <p>{{(projectToDisplay | async)?.challenges}}</p>
-  <p>{{(projectToDisplay | async)?.projectURL}}</p>
+<div class = "projectDetail">
+  <div id="columnOne">
+    <div class="projectTitle">
+      <h3>{{(projectToDisplay)?.projectTitle}}</h3>
+    </div>
+    <hr>
+    <div class="projectBody">
+      <p>{{(projectToDisplay)?.description}}cjv;oire;jd;vj'pvajr'fjaer 'jaer jaerfjaerfaf'a fv'aerfjaervja rjvar jwjfae rojfva eo rjfa rojfawjfv arjf vaworjf vaej rgv ao rj fvaa erfjaervjaer jvarfjwjf rojfvae orjfarojf fvaworjfva jrgvaorjf  vaoejf arkemfc'edf' arfoj fvaoerj foaer fvzdofvka erjvdz'</p>
+    </div>
+    <div class="projectDate">
+      <p>Published: {{(projectToDisplay)?.date}}</p>
+    </div>
+    <hr>
+    <div class="photoRow">
+      <p *ngFor="let photo of photos">
+        <span id="photoHolder">
+          <img src="{{photo}}" class="projectImages" (click)="swapPhoto(photo)">
+        </span>
+      </p>
+    </div>
+  </div>
+  <div id="columnTwo">
+      <div class="mainPhoto">
+        <img src="{{(projectToDisplay)?.photoHeader}}" class="mainProjectImage">
+      </div>
+  </div>
 </div>
