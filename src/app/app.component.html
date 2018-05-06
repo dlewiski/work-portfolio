@@ -27,8 +27,8 @@
   </div>
 
 <footer class="footer">
-  <div class="container">
-    <div *ngIf="isAdmin && isLoggedIn">
+  <div class="footer-container">
+
       <table class="footerTable">
         <div class="row">
           <div class="col-md-2">
@@ -42,7 +42,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col">
+                <div *ngIf="isAdmin && isLoggedIn" class="col">
                   <p><a routerLink="admin">Admin</a></p>
                 </div>
               </div>
@@ -53,6 +53,6 @@
           </div>
         </div>
       </table>
-    </div>
+    
   </div>
 </footer>

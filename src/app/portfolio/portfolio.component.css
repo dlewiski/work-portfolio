@@ -26,13 +26,14 @@
   height: 400px;
   color: whitesmoke;
   font-size: 25px !important;
-  font-family: 'Poller One', cursive;
+  font-family: 'Alegreya Sans SC', sans-serif; font-weight: 300; letter-spacing: 3px;
   background-color: #1a1a1a;
   position: absolute;
   text-align: center;
   vertical-align: middle;
   padding-top: 120px;
   transition: all 0.5s ease;
+  text-transform: uppercase;
 }
 
 .project-image {

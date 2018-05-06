@@ -24,12 +24,11 @@ a {
    height: 70px;
    width: 100%;
    margin: 0px auto;
-
 }
 
 #footerFlowers {
   position: relative;
-  bottom: 105px;
+  bottom: 85px;
   width: 300px;
   transform: translateX(-25%);
 }
