@@ -1,54 +1,61 @@
 .projectList {
   margin-left:auto !important;
   margin-right:auto !important;
-  width: 80% !important;
+  display: inline-block;
+  margin-bottom: 100px;
 }
 
-.cardImage {
+/* .project-image:hover .project_title  {
+  opacity: .5;
   position: relative;
-  height: 350px;
-  width: 100%;
-  overflow: hidden;
-}
-
-#projectListHeader {
+  transition: all 0.5s ease;
   position: absolute;
-  top: -9999px;
-  bottom: -9999px;
-  left: -9999px;
-  right: -9999px;
-  margin: auto;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 120px;
+} */
+
+.project-image:hover {
+  opacity: .5;
+  position: relative;
+  transition: all 0.5s ease;
 }
 
-#projectListTitle {
+.project-title {
+  width: 400px !important;
+  height: 400px;
   color: whitesmoke;
   font-size: 25px !important;
   font-family: 'Poller One', cursive;
   background-color: #1a1a1a;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 120px;
+  transition: all 0.5s ease;
 }
 
-p {
-  font-family: 'Raleway', sans-serif;
-}
-
-#repeatedCard {
-  margin top: 25px;
-  margin-bottom: 25px;
-}
-
-.card {
-  border-radius: 10px;
+.project-image {
+  width: 100%;
   overflow: hidden;
+  display: inline;
+  float: left;
+  position:relative;
 }
 
-.card-text {
-  padding: 10px;
+.project-row {
+  display: flex;
 }
 
 .projectLink {
   padding: 10px;
   font-weight: bold;
+}
+
+.project-holder {
+  width: 400px !important;
+  height: 400px;
+  float: left;
+  position: relative;
+  overflow: hidden;
 }
