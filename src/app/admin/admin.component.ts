@@ -111,4 +111,10 @@ export class AdminComponent implements OnInit {
     this.uploadTime = true;
   }
 
+  copyFunction(photoInput) {
+  photoInput.select();
+  document.execCommand("Copy");
+  }
+
+
 }

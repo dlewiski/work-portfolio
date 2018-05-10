@@ -5,7 +5,7 @@
     </div>
     <hr>
     <div class="blogBody">
-      <p>{{(blogToDisplay)?.postBody}}cjv;oire;jd;vj'pvajr'fjaer 'jaer jaerfjaerfaf'a fv'aerfjaervja rjvar jwjfae rojfva eo rjfa rojfawjfv arjf vaworjf vaej rgv ao rj fvaa erfjaervjaer jvarfjwjf rojfvae orjfarojf fvaworjfva jrgvaorjf  vaoejf arkemfc'edf' arfoj fvaoerj foaer fvzdofvka erjvdz'</p> 
+      <p [innerHTML]="cleanHTML((blogToDisplay)?.postBody)"></p>
     </div>
     <div class="blogDate">
       <p>Published: {{(blogToDisplay)?.date}}</p>

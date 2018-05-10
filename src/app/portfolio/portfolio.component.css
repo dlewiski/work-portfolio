@@ -1,19 +1,9 @@
 .projectList {
   margin-left:auto !important;
   margin-right:auto !important;
-  display: inline-block;
-  margin-bottom: 100px;
+  width: 100%;
+  margin: 0 auto;
 }
-
-/* .project-image:hover .project_title  {
-  opacity: .5;
-  position: relative;
-  transition: all 0.5s ease;
-  position: absolute;
-  text-align: center;
-  vertical-align: middle;
-  padding-top: 120px;
-} */
 
 .project-image:hover {
   opacity: .5;
@@ -22,7 +12,7 @@
 }
 
 .project-title {
-  width: 400px !important;
+  width: 100% !important;
   height: 400px;
   color: whitesmoke;
   font-size: 25px !important;
@@ -44,17 +34,13 @@
   position:relative;
 }
 
-.project-row {
-  display: flex;
-}
-
 .projectLink {
   padding: 10px;
   font-weight: bold;
 }
 
 .project-holder {
-  width: 400px !important;
+  width: 33.3% !important;
   height: 400px;
   float: left;
   position: relative;

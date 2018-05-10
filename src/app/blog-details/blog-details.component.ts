@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 import { Blog } from '../models/blog.model';
 import { BlogService } from '../services/blog.service';
 import { FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
+import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-blog-details',
@@ -19,7 +21,8 @@ export class BlogDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private location: Location,
-              private BlogService: BlogService) {  }
+              private BlogService: BlogService,
+              private sanitizer: DomSanitizer) {  }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
@@ -51,5 +54,9 @@ export class BlogDetailsComponent implements OnInit {
     let tempPhotoHolder02: string = photoToSwap;
     this.blogToDisplay.blogHeader = photoToSwap;
     this.photos.push(tempPhotoHolder01);
+  }
+
+  cleanHTML(unsafeHTML) {
+    return this.sanitizer.bypassSecurityTrustHtml(unsafeHTML);
   }
 }

@@ -1,5 +1,4 @@
 <div class="buttonRow">
-
   <div *ngIf="!projectTime && !bloggingTime && !uploadTime">
     <button class="largeButton" (click)="timeToBlog()">Post to Blog</button>
   </div>
@@ -15,131 +14,164 @@
 
 <div class="adminForm" *ngIf="bloggingTime">
   <div class="table">
-    <tbody>
-      <div class="row">
-        <td>
-          <h3>New Blog Post</h3>
-          <p>Use this form to create new blog posts.</p>
-          <div>
-            <div>
-              <label>Blog Title:</label>
-              <br>
-              <input #newTitle>
-            </div>
-            <div>
-              <label>Blog Body:</label>
-              <br>
-              <textarea #newPostBody id="blogTextArea"></textarea>
-            </div>
-            <div>
-              <label>Header Photo:</label>
-              <br>
-              <input #blogHeader>
-            </div>
-            <div>
-              <label>Tags:</label>
-              <select #blogTag>
-                <option value="coding"> Coding </option>
-                <option value="clothingDesign"> Clothing Design </option>
-                <option value="photography"> Photography </option>
-                <option value="photography"> Graphic Design </option>
-              </select>
-              <div>
-                <label>Small Photos:</label>
-                <br>
-                <input #smallPhoto01>
-                <br>
-                <input #smallPhoto02>
-                <br>
-                <input #smallPhoto03>
-                <br>
-                <input #smallPhoto04>
-                <br>
-                <input #smallPhoto05>
-                <br>
-                <input #smallPhoto06>
-                <br>
-                <input #smallPhoto07>
-              </div>
-              <br>
-              <button (click)="submitBlog(newTitle.value, newPostBody.value, blogTag.value, blogHeader.value, smallPhoto01.value, smallPhoto02.value, smallPhoto03.value, smallPhoto04.value, smallPhoto05.value, smallPhoto06.value, smallPhoto07.value); blogTag.value=''; newTitle.value=''; newPostBody.value=''; blogHeader.value=''; smallPhoto01.value=''; smallPhoto02.value=''; smallPhoto03.value=''; smallPhoto04.value=''; smallPhoto05.value=''; smallPhoto06.value=''; smallPhoto07.value=''">Post to Blog</button>
-              <br>
-              <button (click)="doneBlogging()">Done</button>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div *ngFor="let upload of uploads | async">
-             <p>{{(upload)?.url}}</p>
-             <img id="thumbnail" src="{{(upload)?.url}}">
-          </div>
-        </td>
+    <div class="form-row">
+      <div class="col" id="form-col">
+        <div>
+          <label>Blog Title:</label>
+          <br>
+          <input #newTitle id="blogTextTitleArea">
+        </div>
+        <div>
+          <label>Blog Body:</label>
+          <br>
+          <textarea #newPostBody id="blogTextArea"></textarea>
+        </div>
+        <div>
+          <label>Header Photo:</label>
+          <br>
+          <input #blogHeader id="blogPhotoArea">
+        </div>
+        <div>
+          <label>Tags:</label>
+          <select #blogTag>
+            <option value="coding"> Coding </option>
+            <option value="clothingDesign"> Clothing Design </option>
+            <option value="photography"> Photography </option>
+            <option value="photography"> Graphic Design </option>
+          </select>
+        </div>
+
       </div>
-    </tbody>
+      <div class="col-md-6">
+        <div>
+          <label>Small Photos:</label>
+          <div class="photo-input">
+            <input #smallPhoto01>
+          </div>
+          <div class="photo-input">
+            <input #smallPhoto02>
+          </div>
+          <div class="photo-input">
+            <input #smallPhoto03>
+          </div>
+          <div class="photo-input">
+            <input #smallPhoto04>
+          </div>
+          <div class="photo-input">
+            <input #smallPhoto05>
+          </div>
+          <div class="photo-input">
+            <input #smallPhoto06>
+          </div>
+          <div class="photo-input">
+            <input #smallPhoto07>
+          </div>
+        </div>
+        <br>
+        <button (click)="submitBlog(newTitle.value, newPostBody.value, blogTag.value, blogHeader.value, smallPhoto01.value, smallPhoto02.value, smallPhoto03.value, smallPhoto04.value, smallPhoto05.value, smallPhoto06.value, smallPhoto07.value); blogTag.value=''; newTitle.value=''; newPostBody.value=''; blogHeader.value=''; smallPhoto01.value=''; smallPhoto02.value=''; smallPhoto03.value=''; smallPhoto04.value=''; smallPhoto05.value=''; smallPhoto06.value=''; smallPhoto07.value=''">Post to Blog</button>
+        <br>
+        <button (click)="doneBlogging()">Done</button>
+      </div>
+    </div>
+    <hr>
+    <div class="row" id="photo-container">
+      <div *ngFor="let upload of uploads | async">
+        <div class="col" id="photo-info">
+          <div class="row">
+            <div class="col" id="photo-box">
+              <img id="thumbnail" src="{{(upload)?.url}}">
+            </div>
+            <div class="col" id="photo-text">
+              <input type="text" value="{{(upload)?.url}}" id="photoInput"> <button (click)="copyFunction(photoInput.value)">Copy text</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 
 
 <div class="adminForm" *ngIf="projectTime">
-  <h3>New Project Post</h3>
-  <p>Use this form to create new project for your portfolio.</p>
-  <div>
-    <div>
-      <label>Project Title:</label>
-      <br>
-      <input #newProjectTitle>
+  <div class="table">
+    <div class="form-row">
+      <div class="col" id="form-col">
+        <div>
+          <label>Project Title:</label>
+          <br>
+          <input #newProjectTitle id="textBox">
+        </div>
+        <div>
+          <label>Project Description:</label>
+          <br>
+          <textarea #newProjectDescription id="projectTextArea"></textarea>
+        </div>
+        <div>
+          <label>Project Challenges:</label>
+          <br>
+          <textarea #newProjectChallenges id="projectChallengeArea"></textarea>
+        </div>
+        <div>
+          <label>Github URL:</label>
+          <br>
+          <input #gitUrl id="textBox">
+          <br>
+        </div>
+        <div>
+          <label>Deployed URL:</label>
+          <br>
+          <input #deployedUrl id="textBox">
+          <br>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div>
+          <label>Header Photo:</label>
+          <br>
+          <input #photoHeader>
+        </div>
+        <label>Small Photos:</label>
+        <div class="photo-input">
+          <input #smallPhoto01>
+        </div>
+        <div class="photo-input">
+          <input #smallPhoto02>
+        </div>
+        <div class="photo-input">
+          <input #smallPhoto03>
+        </div>
+        <div class="photo-input">
+          <input #smallPhoto04>
+        </div>
+        <div class="photo-input">
+          <input #smallPhoto05>
+        </div>
+        <div class="photo-input">
+          <input #smallPhoto06>
+        </div>
+        <div class="photo-input">
+          <input #smallPhoto07>
+        </div>
+        <button (click)="submitProject(newProjectTitle.value, newProjectDescription.value, newProjectChallenges.value, gitUrl.value, deployedUrl.value, photoHeader.value, smallPhoto01.value, smallPhoto02.value, smallPhoto03.value, smallPhoto04.value, smallPhoto05.value, smallPhoto06.value, smallPhoto07.value); newProjectTitle.value=''; newProjectDescription.value=''; newProjectChallenges.value=''; gitUrl.value=''; deployedUrl.value=''; photoHeader.value=''; smallPhoto01.value=''; smallPhoto02.value=''; smallPhoto03.value=''; smallPhoto04.value=''; smallPhoto05.value=''; smallPhoto06.value=''; smallPhoto07.value=''">Post Project</button>
+        <br>
+        <button (click)="doneWithProjects()">Done</button>
+      </div>
     </div>
-    <div>
-      <label>Project Description:</label>
-      <br>
-      <textarea #newProjectDescription id="projectTextArea"></textarea>
-    </div>
-    <div>
-      <label>Project Challenges:</label>
-      <br>
-      <textarea #newProjectChallenges id="projectChallengeArea"></textarea>
-    </div>
-    <div>
-      <label>Github URL:</label>
-      <br>
-      <input #gitUrl>
-      <br>
-    </div>
-    <div>
-      <label>Deployed URL:</label>
-      <br>
-      <input #deployedUrl>
-      <br>
-    </div>
-    <div>
-      <label>Header Photo:</label>
-      <br>
-      <input #photoHeader>
-    </div>
-    <div>
-      <label>Small Photos:</label>
-      <br>
-      <input #smallPhoto01>
-      <br>
-      <input #smallPhoto02>
-      <br>
-      <input #smallPhoto03>
-      <br>
-      <input #smallPhoto04>
-      <br>
-      <input #smallPhoto05>
-      <br>
-      <input #smallPhoto06>
-      <br>
-      <input #smallPhoto07>
-    </div>
-    <button (click)="submitProject(newProjectTitle.value, newProjectDescription.value, newProjectChallenges.value, gitUrl.value, deployedUrl.value, photoHeader.value, smallPhoto01.value, smallPhoto02.value, smallPhoto03.value, smallPhoto04.value, smallPhoto05.value, smallPhoto06.value, smallPhoto07.value); newProjectTitle.value=''; newProjectDescription.value=''; newProjectChallenges.value=''; gitUrl.value=''; deployedUrl.value=''; photoHeader.value=''; smallPhoto01.value=''; smallPhoto02.value=''; smallPhoto03.value=''; smallPhoto04.value=''; smallPhoto05.value=''; smallPhoto06.value=''; smallPhoto07.value=''">Post Project</button>
-    <br>
-    <button (click)="doneWithProjects()">Done</button>
-    <div *ngFor="let upload of uploads | async">
-       <p>{{(upload)?.url}}</p>
-       <img id="thumbnail" src="{{(upload)?.url}}">
+    <hr>
+    <div class="row" id="photo-container">
+      <div *ngFor="let upload of uploads | async">
+        <div class="col" id="photo-info">
+          <div class="row">
+            <div class="col" id="photo-box">
+              <img id="thumbnail" src="{{(upload)?.url}}">
+            </div>
+            <div class="col" id="photo-text">
+              <input type="text" value="{{(upload)?.url}}" id="photoInput"> <button (click)="copyFunction(photoInput.value)">Copy text</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

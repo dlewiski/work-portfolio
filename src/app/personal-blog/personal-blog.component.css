@@ -55,3 +55,8 @@ p {
   padding: 10px;
   font-weight: bold;
 }
+
+.blogBody{
+  white-space: pre-wrap;
+  
+}

@@ -2,23 +2,9 @@
   <div class="project-row">
     <div *ngFor="let project of projects | async" class="project-holder">
       <p class="project-title"> {{project.projectTitle}} </p>
-      <div class="overlay">
-        <img class="project-image" src="{{project.photoHeader}}"  (click)="goToProjectDetail(project)">
+      <div class="overlay" (click)="goToProjectDetailPage(project)">
+        <img class="project-image" src="{{project.photoHeader}}"  (click)="goToProjectDetailPage(project)">
       </div>
     </div>
   </div>
 </div>
-
-
-<!-- <% if @mementos.any? %>
-  <% @mementos.each do |memento| %>
-    <div class="memento_holder">
-      <div class="memento_title"><%= link_to memento.title, recipient_memento_path(@recipient, memento) %></div>
-      <div class="overlay">
-        <%= link_to (image_tag memento.image.url(:medium)), recipient_memento_path(@recipient, memento), class: 'memento_image' %>
-      </div>
-    </div>
-    <% end %>
-  <% else %>
-  <p>You haven't saved any Mementos yet!</p> -->
-<!-- <% end %> -->

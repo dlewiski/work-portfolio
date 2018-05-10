@@ -13,6 +13,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class PersonalBlogComponent implements OnInit {
   blogs: FirebaseListObservable<any[]>;
+  blogPreview: string;
 
   constructor(private router: Router, private BlogService: BlogService) { }
 
