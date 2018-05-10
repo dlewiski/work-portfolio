@@ -10,6 +10,11 @@
     <div class="blogDate">
       <p>Published: {{(blogToDisplay)?.date}}</p>
     </div>
+  </div>
+  <div id="columnTwo">
+    <div class="mainPhoto">
+      <img src="{{(blogToDisplay)?.blogHeader}}" class="mainBlogImage">
+    </div>
     <hr>
     <div class="photoRow">
       <p *ngFor="let photo of photos">
@@ -18,10 +23,5 @@
         </span>
       </p>
     </div>
-  </div>
-  <div id="columnTwo">
-      <div class="mainPhoto">
-        <img src="{{(blogToDisplay)?.blogHeader}}" class="mainBlogImage">
-      </div>
   </div>
 </div>

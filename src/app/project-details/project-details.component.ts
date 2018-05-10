@@ -29,7 +29,7 @@ export class ProjectDetailsComponent implements OnInit {
       this.projectToDisplay = new Project(dataLastEmittedFromObserver.projectTitle,
                                    dataLastEmittedFromObserver.description,
                                    dataLastEmittedFromObserver.challenges,
-                                   dataLastEmittedFromObserver.gitUrl, dataLastEmittedFromObserver.deployedURL, dataLastEmittedFromObserver.photoHeader,
+                                   dataLastEmittedFromObserver.gitURL, dataLastEmittedFromObserver.deployedURL, dataLastEmittedFromObserver.photoHeader,
                                    dataLastEmittedFromObserver.photoArray.forEach(thisPhoto => {
                                      this.photos.push(thisPhoto);
                                    })

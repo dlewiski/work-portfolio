@@ -2,11 +2,19 @@
   <div id="columnOne">
     <div class="projectTitle">
       <h3>{{(projectToDisplay)?.projectTitle}}</h3>
+      <a href="{{(projectToDisplay).gitURL}}" class="projectLink">(view on Github)</a>
     </div>
-    <hr>
     <div class="projectBody">
-      <p>{{(projectToDisplay)?.description}}cjv;oire;jd;vj'pvajr'fjaer 'jaer jaerfjaerfaf'a fv'aerfjaervja rjvar jwjfae rojfva eo rjfa rojfawjfv arjf vaworjf vaej rgv ao rj fvaa erfjaervjaer jvarfjwjf rojfvae orjfarojf fvaworjfva jrgvaorjf  vaoejf arkemfc'edf' arfoj fvaoerj foaer fvzdofvka erjvdz'</p>
-    </div>spm
+      <h5>Description</h5>
+      <p>{{(projectToDisplay)?.description}}</p>
+      <h5>Difficulties</h5>
+      <p>{{(projectToDisplay).challenges}}</p>
+    </div>
+  </div>
+  <div id="columnTwo">
+    <div class="mainPhoto">
+      <img src="{{(projectToDisplay)?.photoHeader}}" class="mainProjectImage">
+    </div>
     <hr>
     <div class="photoRow">
       <p *ngFor="let photo of photos">
@@ -15,10 +23,5 @@
         </span>
       </p>
     </div>
-  </div>
-  <div id="columnTwo">
-      <div class="mainPhoto">
-        <img src="{{(projectToDisplay)?.photoHeader}}" class="mainProjectImage">
-      </div>
   </div>
 </div>
