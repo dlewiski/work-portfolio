@@ -22,6 +22,8 @@ import { AuthenticationService } from './services/authentication.service';
 import { UserService } from './services/user.service';
 import { UploadComponent } from './uploads/uploads.component';
 import { UploadService } from './services/uploads.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MzButtonModule, MzInputModule } from 'ng2-materialize';
 
 
 
@@ -52,6 +54,9 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    BrowserAnimationsModule,
+    MzButtonModule,
+    MzInputModule,
   ],
   providers: [AuthGuardService, AuthenticationService, UserService, UploadService],
   bootstrap: [AppComponent]

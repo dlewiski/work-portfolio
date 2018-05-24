@@ -38,12 +38,12 @@ p {
 }
 
 #repeatedCard {
-  margin top: 25px;
+  margin-top: 25px;
   margin-bottom: 25px;
+  border-radius: 10px;
 }
 
 .card {
-  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -58,5 +58,5 @@ p {
 
 .blogBody{
   white-space: pre-wrap;
-  
+
 }

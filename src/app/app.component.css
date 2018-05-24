@@ -22,9 +22,17 @@ a {
    margin: 0px auto;
 }
 
-#footerFlowers {
+#footerFlowers01 {
   position: relative;
   bottom: 85px;
-  width: 300px;
+  width: 150%;
+  transform: translateX(-25%);
+}
+
+#footerFlowers02 {
+  position: relative;
+  bottom: 85px;
+  width: 150%;
+  text-align: right;
   transform: translateX(-25%);
 }
