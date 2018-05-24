@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { AuthenticationService } from './services/authentication.service';
 import { UserService } from './services/user.service';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,6 @@ export class AppComponent {
   private isAdmin: boolean;
   private userName: string;
   private userUID: string;
-
   user;
 
   constructor(private router: Router, public AuthenticationService: AuthenticationService, public userService: UserService) {
@@ -38,6 +38,7 @@ export class AppComponent {
       }
     });
 
+
   }
 
   login() {
@@ -47,5 +48,6 @@ export class AppComponent {
   logout() {
     this.AuthenticationService.logout();
   }
+
 
 }

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg">
+<!-- <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <ul class="nav navbar-nav navbar-left">
       <li><a routerLink="about-me">About Me</a></li>
@@ -9,10 +9,10 @@
     <img src="./assets/img/beetleflipped.gif" id="headerBeetle">
     <ul class="nav navbar-nav navbar-right">
       <li><a routerLink="blog">Personal Blog</a></li>
-      <!-- <li *ngIf="isLoggedIn">
+      <! <li *ngIf="isLoggedIn">
         <a>{{userName}}</a>
       </li> -->
-      <li *ngIf="isLoggedIn">
+      <!-- <li *ngIf="isLoggedIn">
         <a (click)="logout()">Log Out</a>
       </li>
       <li *ngIf="!isLoggedIn">
@@ -20,7 +20,34 @@
       </li>
     </ul>
   </div>
+</nav> -->
+
+
+<nav class="navbar navbar-expand-lg">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Anna-Marie <img src="./assets/img/beetleflipped.gif" id="headerBeetle"></a>
+    <button class="navbar-toggler ml-auto custom-toggler" type="button"  data-toggle="collapse" data-target="#navbarToggler">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarToggler">
+    <ul class="nav navbar-nav mx-auto">
+      <li class="nav-item"><a class="nav-link" routerLink="about-me">About Me</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="portfolio">Project Portfolio</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="blog">Personal Blog</a></li>
+      <!-- <li *ngIf="isLoggedIn">
+        <a>{{userName}}</a>
+      </li> -->
+      <li *ngIf="isLoggedIn" class="nav-item">
+        <a class="nav-link" (click)="logout()">Log Out</a>
+      </li>
+      <li *ngIf="!isLoggedIn"class="nav-item">
+        <a class="nav-link" (click)="login()">Log In</a>
+      </li>
+    </ul>
+  </div>
 </nav>
+
 
   <div class="routerContainer">
     <router-outlet></router-outlet>
@@ -53,6 +80,6 @@
           </div>
         </div>
       </table>
-    
+
   </div>
 </footer>

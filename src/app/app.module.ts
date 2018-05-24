@@ -24,6 +24,7 @@ import { UploadComponent } from './uploads/uploads.component';
 import { UploadService } from './services/uploads.service';
 
 
+
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
@@ -50,7 +51,7 @@ export const firebaseConfig = {
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   providers: [AuthGuardService, AuthenticationService, UserService, UploadService],
   bootstrap: [AppComponent]
