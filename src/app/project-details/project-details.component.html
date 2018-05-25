@@ -2,8 +2,9 @@
   <div id="columnOne">
     <div class="projectTitle">
       <p>{{(projectToDisplay)?.projectTitle}}</p>
-      
-      <a href="{{(projectToDisplay).deployedURL}}" class="projectLink">(Deployed Project)</a>
+      <div *ngIf="(projectToDisplay).deployedURL">
+        <a href="{{(projectToDisplay).deployedURL}}" class="projectLink">(Deployed Project)</a>
+      </div>
       <a href="{{(projectToDisplay).gitURL}}" class="projectLink">(Code)</a>
     </div>
     <div class="projectBody">
