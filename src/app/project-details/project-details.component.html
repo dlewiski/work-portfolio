@@ -1,8 +1,10 @@
 <div class = "projectDetail">
   <div id="columnOne">
     <div class="projectTitle">
-      <h3>{{(projectToDisplay)?.projectTitle}}</h3>
-      <a href="{{(projectToDisplay).gitURL}}" class="projectLink">(view on Github)</a>
+      <p>{{(projectToDisplay)?.projectTitle}}</p>
+      
+      <a href="{{(projectToDisplay).deployedURL}}" class="projectLink">(Deployed Project)</a>
+      <a href="{{(projectToDisplay).gitURL}}" class="projectLink">(Code)</a>
     </div>
     <div class="projectBody">
       <h5>Description</h5>
