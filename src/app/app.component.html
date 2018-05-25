@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-xl">
   <div class="navbar-header">
     <a class="navbar-brand" href="#">Anna-Marie <img src="./assets/img/beetleflipped.gif" id="headerBeetle"></a>
     <button class="navbar-toggler ml-auto custom-toggler" type="button"  data-toggle="collapse" data-target="#navbarToggler">
@@ -16,6 +16,7 @@
       <li *ngIf="!isLoggedIn"class="nav-item">
         <a class="nav-link" (click)="login()">Log In</a>
       </li>
+      <li class="nav-item"><a class="nav-link" href="mailto:annamarie@rogueminx.com"><i class="small material-icons">email</i></a></li>
     </ul>
   </div>
 </nav>
@@ -29,8 +30,10 @@
   <div class="footer-container">
     <table class="footerTable">
       <div class="row">
-        <div class="col-md-3 d-none d-sm-block">
-          <img src="./assets/img/hells.gif" id="footerFlowers01">
+        <div class="col-md-3">
+          <div class="d-none d-lg-block">
+            <img src="./assets/img/hells.gif" id="footerFlowers01">
+          </div>
         </div>
         <div class="col-md-6">
           <table class="footerTableSmall">
@@ -42,8 +45,10 @@
             </div>
           </table>
         </div>
-        <div class="col-md-3 d-none d-sm-block">
-          <p><img src="./assets/img/hells2.gif" id="footerFlowers02"></p>
+        <div class="col-md-3">
+          <div class="d-none d-lg-block">
+            <img src="./assets/img/hells2.gif" id="footerFlowers02">
+          </div>
         </div>
       </div>
     </table>

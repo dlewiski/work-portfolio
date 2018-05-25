@@ -25,14 +25,14 @@ a {
 #footerFlowers01 {
   position: relative;
   bottom: 85px;
-  width: 150%;
+  width: 125%;
+  left: 125px;
   transform: translateX(-25%);
 }
 
 #footerFlowers02 {
   position: relative;
   bottom: 85px;
-  width: 150%;
-  text-align: right;
+  width: 125%;
   transform: translateX(-25%);
 }
