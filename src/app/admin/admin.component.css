@@ -40,17 +40,26 @@
 
 #photo-box {
   height: 100px;
+  width: 100px;
   overflow: hidden;
   float: left;
 }
 
+#photo-text {
+  width: 75px;
+}
+
 #thumbnail {
-  width: 100px;
+  width: 100px !important;
   overflow: hidden;
 }
 
 #form-col {
   width: 50%;
+}
+
+.smallbutton {
+  width: 70px;
 }
 
 .form-row {

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-xl">
   <div class="navbar-header">
-    <a class="navbar-brand" href="#">Anna-Marie <img src="./assets/img/beetleflipped.gif" id="headerBeetle"></a>
+    <a class="navbar-brand" href="#">Anna Marie <img src="./assets/img/beetleflipped.gif" id="headerBeetle"></a>
     <button class="navbar-toggler ml-auto custom-toggler" type="button"  data-toggle="collapse" data-target="#navbarToggler">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,8 +8,8 @@
   <div class="collapse navbar-collapse" id="navbarToggler">
     <ul class="nav navbar-nav mx-auto">
       <li class="nav-item"><a class="nav-link" routerLink="about-me">About Me</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="portfolio">Project Portfolio</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="blog">Personal Blog</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="portfolio">Portfolio</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="blog">Blog</a></li>
       <li *ngIf="isLoggedIn" class="nav-item">
         <a class="nav-link" (click)="logout()">Log Out</a>
       </li>
