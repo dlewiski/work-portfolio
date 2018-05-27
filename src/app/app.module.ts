@@ -24,6 +24,7 @@ import { UploadComponent } from './uploads/uploads.component';
 import { UploadService } from './services/uploads.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MzButtonModule, MzInputModule } from 'ng2-materialize';
+import { AngularDraggableModule } from 'angular2-draggable';
 
 
 
@@ -57,6 +58,7 @@ export const firebaseConfig = {
     BrowserAnimationsModule,
     MzButtonModule,
     MzInputModule,
+    AngularDraggableModule
   ],
   providers: [AuthGuardService, AuthenticationService, UserService, UploadService],
   bootstrap: [AppComponent]

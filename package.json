@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "angular-icons": "^1.0.11",
+    "angular2-draggable": "^1.4.2",
     "angular2-materialize": "^15.1.10",
     "angularfire2": "^4.0.0-rc.0",
     "bootstrap": "^4.0.0",
