@@ -1,17 +1,24 @@
 .rosephoto {
-  width: 300px;
+  max-width: 100%;
+  height: auto;
 }
 
 .mothphoto {
-  width: 250px;
+  max-width: 100%;
+  height: auto;
 }
 
-.imageholder {
+.mainimageholder {
   display: flex;
   flex-direction: row;
   width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
+}
+
+.imageholder {
+  max-width: 25%;
+  height: auto;
 }
 
 p {

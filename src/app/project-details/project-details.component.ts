@@ -49,8 +49,5 @@ export class ProjectDetailsComponent implements OnInit {
     this.photos.push(tempPhotoHolder01);
   }
 
-  login() {
-    this.projectToDisplay.login();
-  }
 
 }

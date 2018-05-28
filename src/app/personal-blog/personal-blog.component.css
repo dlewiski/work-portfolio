@@ -7,7 +7,6 @@
 .cardImage {
   position: relative;
   height: 350px;
-  width: 100%;
   overflow: hidden;
 }
 
@@ -18,7 +17,7 @@
   left: -9999px;
   right: -9999px;
   margin: auto;
-  width: 100%;
+  width: auto;
   height: auto;
   overflow: hidden;
 }

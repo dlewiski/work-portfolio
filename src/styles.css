@@ -21,13 +21,20 @@
 
 .navbar-brand {
   color: whitesmoke !important;
-  font-size: 50px !important;
+  font-size: 40px !important;
   font-family: 'Alegreya Sans SC',
   sans-serif; font-weight: 300;
   letter-spacing: 5px;
   text-transform: uppercase;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.navbar-header {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  align-items: center;
 }
 
 .navbar-brand:hover {
@@ -56,9 +63,9 @@
 }
 
 .custom-toggler.navbar-toggler {
-    border-color: rgb(228,230,225);
-    border-radius: 5px;
-    border-width: thin;
+  border-color: rgb(228,230,225);
+  border-radius: 5px;
+  border-width: thin;
 }
 
 .custom-toggler .navbar-toggler-icon {

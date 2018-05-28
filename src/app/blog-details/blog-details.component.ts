@@ -34,12 +34,13 @@ export class BlogDetailsComponent implements OnInit {
                                    dataLastEmittedFromObserver.postBody,
                                    dataLastEmittedFromObserver.blogTag,
                                    dataLastEmittedFromObserver.blogHeader,
-                                   dataLastEmittedFromObserver.photoArray.forEach(thisPhoto => {
-                                     this.photos.push(thisPhoto);
-                                   })
                                  );
       this.blogToDisplay.date = dataLastEmittedFromObserver.date;
       this.blogToDisplay.author = dataLastEmittedFromObserver.author;
+      if (dataLastEmittedFromObserver.photoArray.length > 0){}
+      dataLastEmittedFromObserver.photoArray.forEach(thisPhoto => {
+        this.photos.push(thisPhoto);
+      })
     });
   }
 
